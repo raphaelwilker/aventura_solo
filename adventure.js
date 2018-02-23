@@ -59,13 +59,13 @@ var json  = [{
 		"goto": 7
 	}]
 },{
-	"text": "<p>O caminho da montanha pareceu mais atraente. Seguindo por uma trilha que passa entre as rochas, sob sombras refrescantes, você pensa em como seria penosa a caminhada pelo vale castigado pelo sol. Mas a trilha rochosa também apresenta suas desvantagens, como você descobre logo a seguir: vinde de uma caverna próxima, um urro poderoso anuncia a chegada de um enorme urso cinzento.</p><p>A fera aproximan-se nas patas de trás, pronta a golpear  com suas garras negras. Você saca a Espada Sagrada, mas entende que o animal apenas tenta proteger sua toca - talvez seja até mesmo uma fêmea com filhotes -, e não deseja matá-lo. A este pensamento , a lâmina emite uma luz intensa que fere os olhos do urso, afugentando-o.</p><p>Agradecendo aos deuses por uma solução pacífica para seu dilema, você segue em frente.</p><p></p>",
+	"text": "<p>O caminho da montanha pareceu mais atraente. Seguindo por uma trilha que passa entre as rochas, sob sombras refrescantes, você pensa em como seria penosa a caminhada pelo vale castigado pelo sol. Mas a trilha rochosa também apresenta suas desvantagens, como você descobre logo a seguir: vinde de uma caverna próxima, um urro poderoso anuncia a chegada de um enorme urso cinzento.</p><p>A fera aproximan-se nas patas de trás, pronta a golpear  com suas garras negras. Você saca a Espada Sagrada, mas entende que o animal apenas tenta proteger sua toca - talvez seja até mesmo uma fêmea com filhotes -, e não deseja matá-lo. A este pensamento , a lâmina emite uma luz intensa que fere os olhos do urso, afugentando-o.</p><p>Agradecendo aos deuses por uma solução pacífica para seu dilema, você segue em frente.</p><p>Depois de afungentar o urso, você continua pela trilha que singra a montanha. Em certo ponto é obrigado a parar: parte do caminho foi destruída por um desmoronamento</p><p>A escalada parece possível, embora perigosa.</p>",
 	"options": [{
-		"text": "<li><a href='#'>Lutar ?</a></li>",
-		"goto": 5
+		"text": "<li><a href='#'>Escalar?</a></li>",
+		"goto": 11
 	}, {
-		"text": "<li><a href='#'>Fugir ?</a></li>",
-		"goto": 6
+		"text": "<li><a href='#'>Voltar e seguir pelo vale?</a></li>",
+		"goto": 10
 	}]
 },{
 	"text": "<p>Preocupado com as pessoas que possam vir a ser mortas pelo dragão, você entra no Pântano da Agonia para ganhar tempo. Caminha através de lama e águas estagnadas até o poente, parando apenas por um instante para acender uma tocha e beliscar um  pedaço de carne defumada.</p><p>Durante essa rápida pausa, ruídos incomuns chegam até você. Passos aproximan-se, sombras movem-se adiante. Da escuridão surgem duas criaturas bípedes, esverdeadas e tremendamente feias: são scrags, os trolls d´agua.</p>",
