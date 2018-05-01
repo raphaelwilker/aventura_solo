@@ -1,0 +1,23 @@
+{
+  "name": "aventura_solo",
+  "version": "1.0.0",
+  "description": "Transcrisao de uma aventura solo",
+  "main": "adventure.js",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raphaelwilker/aventura_solo.git"
+  },
+  "author": "Raphael Wilker Mendes Araujo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raphaelwilker/aventura_solo/issues"
+  },
+  "homepage": "https://github.com/raphaelwilker/aventura_solo#readme"
+}
