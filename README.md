@@ -7,4 +7,4 @@ Também é criar uma engine para livros jogos, que se aperfeiçoada pode ser usa
 
 Para jogar precisa ter o node instalado, e para rodar o servidor, basta usar node server/server.js e usar o seu localhost:5005
 
-Essa é versão beta 1.0.0
+Essa é versão Alpha 1.0.1
