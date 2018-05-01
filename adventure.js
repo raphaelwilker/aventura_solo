@@ -155,18 +155,18 @@ var json  = [{
 		"goto": 19
 	}]
 },{
-	"text": "<p>você se recorda os ensinamentos dos clérigos de sua ordem, sobre como a ganância sempre leva à ruina.</p><p>Arriscar-se por algumas moedas não seria sábio. você esquece a bolsa e completa a escalada atravessando o desmoronamento em segurança e retornando à trilha.</p><p>você continua no caminho até que, restando apenas alguns minutos para o pôr-do-sol, avista uma estalagem e segue para lá.</p><p>A estalagem é quente e acolhedora. você se senta em uma mesa próxima à lareira, e uma rapariga serve-lhe um prato de sopa fumegante. Antes que você possa dizer qualquer coisa, um homem aixo e de grandes bigodes apresenta-se como Stew, o dono do estabelecimento. Diz que a sopa é poor conta da casa, e que um quarto, comida e um banhão custarão quatro peças de cobre.</p>",
+	"text": "<p>Você se recorda os ensinamentos dos clérigos de sua ordem, sobre como a ganância sempre leva à ruina.</p><p>Arriscar-se por algumas moedas não seria sábio. você esquece a bolsa e completa a escalada atravessando o desmoronamento em segurança e retornando à trilha.</p><p>você continua no caminho até que, restando apenas alguns minutos para o pôr-do-sol, avista uma estalagem e segue para lá.</p><p>A estalagem é quente e acolhedora. você se senta em uma mesa próxima à lareira, e uma rapariga serve-lhe um prato de sopa fumegante. Antes que você possa dizer qualquer coisa, um homem aixo e de grandes bigodes apresenta-se como Stew, o dono do estabelecimento. Diz que a sopa é poor conta da casa, e que um quarto, comida e um banhão custarão quatro peças de cobre.</p>",
 	"origin": "38,3,24",
 	"id": 15 ,
 	"options": [{
 		"text": "<li><a href='#'>Revelar sua missão ?</a></li>",
-		"goto": 21
+		"goto": 22
 	}, {
 		"text": "<li><a href='#'>Falar que não tem dinheiro ?</a></li>",
-		"goto": 22
+		"goto": 23
 	}]
 },{
-	"text": "<p>você entrega algumas moedas ao homem, que coloca a jangada em movimento. Quando estão no meio do rio, contudo, o jangadeiro exibe um sorriso matereiro:<br>- Agora, amigo,  se quiser chegar à outra margem com vida, irá  entregar-me todo o seu dinheiro.</p>",
+	"text": "<p>Você entrega algumas moedas ao homem, que coloca a jangada em movimento. Quando estão no meio do rio, contudo, o jangadeiro exibe um sorriso matereiro:<br>- Agora, amigo,  se quiser chegar à outra margem com vida, irá  entregar-me todo o seu dinheiro.</p>",
 	"origin": "4",
 	"id": 16 ,
 	"options": [{
@@ -177,32 +177,32 @@ var json  = [{
 		"goto": 20
 	}]
 },{
-	"text": "<p>você olha melhor para a ponte, e acha que ela não irá desabar sob os pés de um servo dos deuses.Agradecendo ao jangadeiro pela oferta, você declina e segue pela ponte.Ela range um pouco em protesto, mas cumpre seu papel; você chega ao outro lado em segurança.</p><p>O rio e a ponte foram deixados para trás. A noite cairá logo. As luzes de uma taverna podem ser vistas ao longe, e você segue para lá.</p><p>A estalagem é quente e acolhedora. você se senta em uma mesa próxima à lareira, e uma rapariga serve-lhe um prato de sopa fumegante. Antes que você possa dizer qualquer coisa, um homem aixo e de grandes bigodes apresenta-se como Stew, o dono do estabelecimento. Diz que a sopa é poor conta da casa, e que um quarto, comida e um banhão custarão quatro peças de cobre.</p>",
+	"text": "<p>Você olha melhor para a ponte, e acha que ela não irá desabar sob os pés de um servo dos deuses.Agradecendo ao jangadeiro pela oferta, você declina e segue pela ponte.Ela range um pouco em protesto, mas cumpre seu papel; você chega ao outro lado em segurança.</p><p>O rio e a ponte foram deixados para trás. A noite cairá logo. As luzes de uma taverna podem ser vistas ao longe, e você segue para lá.</p><p>A estalagem é quente e acolhedora. você se senta em uma mesa próxima à lareira, e uma rapariga serve-lhe um prato de sopa fumegante. Antes que você possa dizer qualquer coisa, um homem aixo e de grandes bigodes apresenta-se como Stew, o dono do estabelecimento. Diz que a sopa é poor conta da casa, e que um quarto, comida e um banhão custarão quatro peças de cobre.</p>",
 	"origin": "8,24",
 	"id": 17 ,
 	"options": [{
 		"text": "<li><a href='#'>Pagar ?</a></li>",
-		"goto": 23 
+		"goto": 24 
 	},{
 		"text": "<li><a href='#'>Revelar sua missão ?</a></li>",
-		"goto": 21
+		"goto": 22
 	}, {
 		"text": "<li><a href='#'>Falar que não tem dinheiro ?</a></li>",
-		"goto": 22 
+		"goto": 21 
 	}]
 },{
-	"text": "<p>você analisa sua situação: está no meio de um rio, em uma frágil jangada, que pode desmanchar-se se tentar um combate. Sua armadura faria com que afundasse feito pedra. Dando de ombros, voce entrega a bolsa. O jangadeiro sorri em aprovação e prossegue remando.</p><p>Quando estão próximos da margem, um remo atinge suas costas e derruba você na água. Felizmente a água não é profunda aqui - mas, quando consegue se levantar, o jangadeiro já está longe. você amaldiçoa sua tolice, prometendo a si mesmo que , depois do dragão esse assaltante será o próximo a provar a justiça de Hedryl</p><p>A viagemsegue tranquila. Quando o sol aproxima-se do horizonte, você vê uma estalagem e segue sua direção.</p><p>A estalagem é quente e acolhedora. você se senta em uma mesa próxima à lareira, e uma rapariga serve-lhe um prato de sopa fumegante. Antes que você possa dizer qualquer coisa, um homem aixo e de grandes bigodes apresenta-se como Stew, o dono do estabelecimento. Diz que a sopa é poor conta da casa, e que um quarto, comida e um banhão custarão quatro peças de cobre.</p>",
+	"text": "<p>Você analisa sua situação: está no meio de um rio, em uma frágil jangada, que pode desmanchar-se se tentar um combate. Sua armadura faria com que afundasse feito pedra. Dando de ombros, voce entrega a bolsa. O jangadeiro sorri em aprovação e prossegue remando.</p><p>Quando estão próximos da margem, um remo atinge suas costas e derruba você na água. Felizmente a água não é profunda aqui - mas, quando consegue se levantar, o jangadeiro já está longe. você amaldiçoa sua tolice, prometendo a si mesmo que , depois do dragão esse assaltante será o próximo a provar a justiça de Hedryl</p><p>A viagemsegue tranquila. Quando o sol aproxima-se do horizonte, você vê uma estalagem e segue sua direção.</p><p>A estalagem é quente e acolhedora. você se senta em uma mesa próxima à lareira, e uma rapariga serve-lhe um prato de sopa fumegante. Antes que você possa dizer qualquer coisa, um homem aixo e de grandes bigodes apresenta-se como Stew, o dono do estabelecimento. Diz que a sopa é poor conta da casa, e que um quarto, comida e um banhão custarão quatro peças de cobre.</p>",
 	"origin": "24",
 	"id": 18 ,
 	"options": [{
 		"text": "<li><a href='#'>Revelar sua missão ?</a></li>",
-		"goto": 21
+		"goto": 22
 	}, {
 		"text": "<li><a href='#'>Falar que não tem dinheiro ?</a></li>",
-		"goto": 22 
+		"goto": 23 
 	}]
 },{
-	"text": "<p>você continua descendo em busca de seus pertences, mas a armadura é desajeitada para alpinismo. Em certo ponto você  perde o apoio e cai. Pois é, você esqueceu os ensinamentos de sua ordem, e deixou que a ganância fosse maior que a prudência. Seu cadáver arrebentado servirá de alimento para abutres e hienas.</p>",
+	"text": "<p>Você continua descendo em busca de seus pertences, mas a armadura é desajeitada para alpinismo. Em certo ponto você  perde o apoio e cai. Pois é, você esqueceu os ensinamentos de sua ordem, e deixou que a ganância fosse maior que a prudência. Seu cadáver arrebentado servirá de alimento para abutres e hienas.</p>",
 	"origin": "22",
 	"id": 19 ,
 	"options": [{
@@ -210,7 +210,7 @@ var json  = [{
 		"goto": 0
 	}]
 },{
-	"text": "<p>você ri do jangadeiro, perguntando se é alguma brincadeira. Quando entende que não receberá dinheiro algum, o assaltante empurra você com um movimento rápido do remo. O peso da armadura desequilibra você, fazendo com que caia na água e afunde.</p><p>Afogamento. Que triste fim para um guerreiro de Hedryl...</p><h3>Fim.</h3>",
+	"text": "<p>Você ri do jangadeiro, perguntando se é alguma brincadeira. Quando entende que não receberá dinheiro algum, o assaltante empurra você com um movimento rápido do remo. O peso da armadura desequilibra você, fazendo com que caia na água e afunde.</p><p>Afogamento. Que triste fim para um guerreiro de Hedryl...</p><h3>Fim.</h3>",
 	"origin": "21",
 	"id": 20 ,
 	"options": [{
@@ -220,89 +220,89 @@ var json  = [{
 },{
 	"text": "<p>você ri do jangadeiro, perguntando se é alguma brincadeira. Quando entende que não receberá dinheiro algum, o assaltante empurra você com um movimento rápido do remo. O peso da armadura desequilibra você, fazendo com que caia na água e afunde.</p><p>Afogamento. Que triste fim para um guerreiro de Hedryl...</p><h3>Fim.</h3>",
 	"origin": "21",
-	"id": 20 ,
-	"options": [{
-		"text": "<li><a href='#'>Recomeçar</a></li>",
-		"goto": 0
-	}]
-},{
-	"text": "<p>você aceita a sopa, mas diz que não pode pagar. Wuando o estalajadeiro pergunta o que alguém faz sem dinheiro em um lugar como aquele, ocê fala sobre sua caça ao dragão que ameaça a vila de Mornard.</p><p>-Um guerreirofr Hedryl! - espanta-se o pequeno Stew. -Não se preocupe com o dinheiro, nobre herói. Será uma honra ajudá-lo em sua missão sagrada, especialmente se puder livrar Mornard daquele monstro ganancioso. Ele está arruinando meus negócios!</p><p>Stew revela que o dragão instalou-se na vila recentemente, passando a tomar dinheiro dos habitantes. Agora, contudo, parecia ter se cansado da simples extorsão e massacrava sem piedade.</p><p>você agradece a Stew pelas informações e pela lauta refeição que ele prepara. Quando termina de comer e vai para seu quarto, enontra a raparigaque servi-lhe a sopa: ela esta preparando seu banho, derramando um balde de água quente em uma bacia.</p><p>- Precisa estar descansado para a batalha que virá, senhor - diz ela, com os olhos baixos. - Se me permitir essa honra, gostaria de banhá-lo e aquecê-lo durante a noite.</p><p>você tenta convencer a jovem de que não e digno de tanta dedicação, que está meramente cumprindo seu dever sagrado - mas, depois de alguma conversa, descobre que os pais dela viviam em Mornard e foram mortos pelo monstro. Ela deseja intensamente fazer qualquer coisa para claborar com a morte da fera.</p><p>Concluindo que não seria justo negar esse desejo à jovem, você concorda. Ela te banha e você adormece, na manhã seguinte você é um guerreiro revigorado, disposto a matar mil dragões.</p><p>A vila de Nirnard está logo adiante.</p>",
-	"origin": "31",
 	"id": 21 ,
 	"options": [{
-		"text": "<li><a href='#'>Continuar</a></li>",
-		"goto": 24
+		"text": "<li><a href='#'>Recomeçar</a></li>",
+		"goto": 0
 	}]
 },{
-	"text": "<p>você aceita a sopa, mas diz que não pode pagar. Quando o estalajadeiro pergunta o que alguém faz sem dinheiro em um lugar como aquele, você responde; a missão de um guerreiro de Hedryl não diz respeito a qualquer um.</p><p>O estalajadeiro fecha a cara. Diz que não faz caridade, e mostra-lhe a porta. Sem alternativa, você deixa a estalagem e procura um lugar para dormir no estábulo. A noite é longa e fria, mas você consegue dormir, e segue para a vila ameaçada na manhã seguinte.</p>",
-	"origin": "9",
+	"text": "<p>Você aceita a sopa, mas diz que não pode pagar. Wuando o estalajadeiro pergunta o que alguém faz sem dinheiro em um lugar como aquele, ocê fala sobre sua caça ao dragão que ameaça a vila de Mornard.</p><p>-Um guerreirofr Hedryl! - espanta-se o pequeno Stew. -Não se preocupe com o dinheiro, nobre herói. Será uma honra ajudá-lo em sua missão sagrada, especialmente se puder livrar Mornard daquele monstro ganancioso. Ele está arruinando meus negócios!</p><p>Stew revela que o dragão instalou-se na vila recentemente, passando a tomar dinheiro dos habitantes. Agora, contudo, parecia ter se cansado da simples extorsão e massacrava sem piedade.</p><p>você agradece a Stew pelas informações e pela lauta refeição que ele prepara. Quando termina de comer e vai para seu quarto, enontra a raparigaque servi-lhe a sopa: ela esta preparando seu banho, derramando um balde de água quente em uma bacia.</p><p>- Precisa estar descansado para a batalha que virá, senhor - diz ela, com os olhos baixos. - Se me permitir essa honra, gostaria de banhá-lo e aquecê-lo durante a noite.</p><p>você tenta convencer a jovem de que não e digno de tanta dedicação, que está meramente cumprindo seu dever sagrado - mas, depois de alguma conversa, descobre que os pais dela viviam em Mornard e foram mortos pelo monstro. Ela deseja intensamente fazer qualquer coisa para claborar com a morte da fera.</p><p>Concluindo que não seria justo negar esse desejo à jovem, você concorda. Ela te banha e você adormece, na manhã seguinte você é um guerreiro revigorado, disposto a matar mil dragões.</p><p>A vila de Mornard está logo adiante.</p>",
+	"origin": "31",
 	"id": 22 ,
 	"options": [{
 		"text": "<li><a href='#'>Continuar</a></li>",
-		"goto": 24
+		"goto": 25
 	}]
 },{
-	"text": "<p>você saca quatro moedas da olsa e entrega ao estalajadeiro, que retira-se com um sorriso. Pouco depois, a rapariga retorna com vinho e um grade pedaço de carne de javali. você^come até farta-se (pedindo perdão aos deuses pela gula, claro) e retira-separa seu quarto, onde encontra uma bacia de água quente ppara seu banho. Limpo e alimentado, você faz suas orações e desaba na cama, entregue aos deuses dos sonhos.</p><p>Pela manhã você abandona a estalagem e coloca-se a caminho de Mornard.</p>",
-	"origin": "13",
+	"text": "<p>Você aceita a sopa, mas diz que não pode pagar. Quando o estalajadeiro pergunta o que alguém faz sem dinheiro em um lugar como aquele, você responde; a missão de um guerreiro de Hedryl não diz respeito a qualquer um.</p><p>O estalajadeiro fecha a cara. Diz que não faz caridade, e mostra-lhe a porta. Sem alternativa, você deixa a estalagem e procura um lugar para dormir no estábulo. A noite é longa e fria, mas você consegue dormir, e segue para a vila ameaçada na manhã seguinte.</p>",
+	"origin": "9",
 	"id": 23 ,
 	"options": [{
 		"text": "<li><a href='#'>Continuar</a></li>",
-		"goto": 24
+		"goto": 25
+	}]
+},{
+	"text": "<p>Você saca quatro moedas da olsa e entrega ao estalajadeiro, que retira-se com um sorriso. Pouco depois, a rapariga retorna com vinho e um grade pedaço de carne de javali. você^come até farta-se (pedindo perdão aos deuses pela gula, claro) e retira-separa seu quarto, onde encontra uma bacia de água quente ppara seu banho. Limpo e alimentado, você faz suas orações e desaba na cama, entregue aos deuses dos sonhos.</p><p>Pela manhã você abandona a estalagem e coloca-se a caminho de Mornard.</p>",
+	"origin": "13",
+	"id": 24 ,
+	"options": [{
+		"text": "<li><a href='#'>Continuar</a></li>",
+		"goto": 25
 	}]
 },{
 	"text": "<p>A vila de Mornard surge ao longe, e mesmo a essa distânciaa visão é terrivel: montes de destroços enegrecidos onde deveria haver  casas, e pessoas mortas e feridas por toda  parte.</p><p>- Quem fez isto? - você pergunta, revoltado, a uma jovem que tenta confortar um rapaz gravemente queimado.<br>- Onde está o responsável por este massacre insano? Mostre-me, e levarei a justiça de Hedryl até esse monstro!</p><p>Entre soluços e lágrimas, a jovem aponta para uma colina próxima:<br>- O dragão esconde-se nas ruínas de um templo. No início apenas exigia tributos, obrigava-nos a entregar todo o nosso ouro e joias...mas, agora que nossos escassos tesouros esgotaram-se, ele ataca com seu fogo infernal. Oh, meu querido... ele tentou me proteger das chamas...</p><p>você percebe que o estado do rapaz ´grave, e ele morrerá a quaquer momento.</p>",
 	"origin": "17",
-	"id": 24 ,
+	"id": 25 ,
 	"options": [{
 		"text": "<li><a href='#'>Ajudar ?</a></li>",
-		"goto": 25
+		"goto": 26
 	}, {
 		"text": "<li><a href='#'>Ir atrás do dragão ?</a></li>",
-		"goto": 26 
+		"goto": 27 
 	}]
 },{
 	"text": "<p>O valente rapaz está morrendo porque salvou a garota, e Hedryl não aprovaria sua morte. você ajoelha-se ao seu lado, retira as manoplas metálicas e começa o tirual de cura: uma luz suave é irradiada de suas mãos, curando o magicamente as queimaduras. Marcas horríveis permanecem na pele do rapaz, mas ele vai viver.</p><p>você usa o que resta de seus poderes para confortar os feridos mais graves. Quando termina de curar um ancião moribundo, seu neto enxuga as lágrimas e diz que conhece uma entrada secreta para o temmplo.</p><p>- Desenhe um mapa - você diz, entregando a ele pena e pergaminho.</p><p>O garoto rabisca algumas linhas no papel, de forma clara o bastante para que você possa reconhecer a planta de um templo. De acordo com o desenho, existe uma passagem lateral que poderia ser usada atacar o dragão de surpresa.</p>",
 	"origin": "37",
-	"id": 25 ,
+	"id": 26 ,
 	"options": [{
 		"text": "<li><a href='#'>Entrar pela porta da frente ?</a></li>",
-		"goto": 27
+		"goto": 28
 	}, {
 		"text": "<li><a href='#'>Ir pela entrada secreta ?</a></li>",
-		"goto": 28 
+		"goto": 29 
 	}]
 },{
 	"text": "<p>Os feridos são muitos, e mesmo seus poderes divinos de cura talvez não sejam o bastante. Além disso, pode precisar deles se for ferido pelo dragão. você se esforça para ignorar os lamentos da pessoas queimadas e deixa a vila, rumando para o templo.</p>",
 	"origin": "29",
-	"id": 26 ,
+	"id": 27 ,
 	"options": [{
 		"text": "<li><a href='#'>Continuar...</a></li>",
-		"goto": 27
+		"goto": 30
 	}]
 },{
 	"text": "<p>Caminhando até a colina, você logo encontra a construção arruinada - antiga igreja de algum culto esquecido. você faz uma rápida oração aos deuses locais, pedindo permissão para pisar em seu solo sagrado - e avança pelo pórtico frontal.</p><p>Lá dentro, na imensidão do templo, uma forma escamosa enrosca-se à volta de um punhado de moedas e jóias. O dragão vermelho olha zombeteiro para o cavaleiro que se aproxima.</p><p>- Ousa invadir meu santuário, pobre humano? Acredita que sua espada de brinquedo poder-a vencer-me? Venha, e lhe darei a morte que os tolos merecem.</p><p>Sem deixar-se intimidar pela bravata da serpente, você saca sua espada e investe coorrendo com um grado de guerra. A batalha parece durar uma eternidade; cada golpe da Espada Sagrada provoca um contra-ataque  das garras demoníacas do dragão. COrtes profundos no peito e e garganta parecem não afetar em nada a fera, que prossegue lutando. Então, em certo momento, chamas  faiscam através dos ferimentos no pescoço escamoso. Ele vai usar seu hálito de fogo!</p><p>Sabendo que este poderá ser seu fim, você aguarda até o último momento. Quando a bocarra abre-se para despejar sua língua flamenjante, você ataca! A Espada Sagrada penetra fundo no céu da boca do monstro, e atravessa-lhe o cérebro - ao mesmo tempo em que uma cascata unfernal envolve seu próprio corpo, derretendo a armadura, desmanchando a carne em fumaça e desfazendo os ossos em cinzas.</p>",
 	"origin": "11",
-	"id": 27 ,
-	"options": [{
-		"text": "<li><a href='#'>Continuar...</a></li>",
-		"goto": 29
-	}]
-},{
-	"text": "<p>Aproximando-se da colina, você vê as ruínas do templo. O mapa do garoto leva você a uma entrada lateral, escavada pelo tempo. Depois de alguns minutos percorrendo corredores escuros e úmidos, você alcança o salão principal.</p><p>Lá dentro, na imensidão do templo, uma forma escamosa enrosca-se à volta de um punhado de moedas e jóias. O dragão não viu você: sua cabeça está voltada para a entrada, na direção oposta. Se tivesse entrado pela frente, jamais poderia surpreendê-lo.</p><p>você aproxima-se sorrateiro e, no último momento, um brado de guerra explode em sua garganta - enquanto a Espada Sagrada penetra fundo no ombro do dragão, inutilizando sua pata esqueda. A fera vira-se para lutar, mas a pata quebrada não permite que se mova rapidamente, e você consegue aproveitar sua posição privilegiada para aplicar mais golpes. Em poucos momentos, todo o flanco esquerdo do dragão está destruío. Seu coração pulsante é visível através da carne rasgada. Uma última estocada coloca fim a vida do demônio. você venceu.</p>",
-	"origin": "26",
 	"id": 28 ,
 	"options": [{
 		"text": "<li><a href='#'>Continuar...</a></li>",
 		"goto": 30
 	}]
 },{
+	"text": "<p>Aproximando-se da colina, você vê as ruínas do templo. O mapa do garoto leva você a uma entrada lateral, escavada pelo tempo. Depois de alguns minutos percorrendo corredores escuros e úmidos, você alcança o salão principal.</p><p>Lá dentro, na imensidão do templo, uma forma escamosa enrosca-se à volta de um punhado de moedas e jóias. O dragão não viu você: sua cabeça está voltada para a entrada, na direção oposta. Se tivesse entrado pela frente, jamais poderia surpreendê-lo.</p><p>você aproxima-se sorrateiro e, no último momento, um brado de guerra explode em sua garganta - enquanto a Espada Sagrada penetra fundo no ombro do dragão, inutilizando sua pata esqueda. A fera vira-se para lutar, mas a pata quebrada não permite que se mova rapidamente, e você consegue aproveitar sua posição privilegiada para aplicar mais golpes. Em poucos momentos, todo o flanco esquerdo do dragão está destruío. Seu coração pulsante é visível através da carne rasgada. Uma última estocada coloca fim a vida do demônio. você venceu.</p>",
+	"origin": "26",
+	"id": 29 ,
+	"options": [{
+		"text": "<li><a href='#'>Continuar...</a></li>",
+		"goto": 31
+	}]
+},{
 	"text": "<p>O dragão tomba sem vida. Não irá mais molestar inocentes, não irá mais aterrorizar aldeões indefesos.<br>Um grade mal foi vencido, e o preço a pagar foi muito pequeno: apenas sua vida.</p><p>Na terra, sua coragem nunca será esquecida. A vila de Mornard prestará homenagens a seu salvador para sempre, os bardos cantarão suas batalhas pelo reino. E, no céu Hedryl estará esperando por seu mais valoroso guerreiro...</p><h3>Fim.</h3><h4>História publicada na revista Dragão Brasil Ano 1 número 12 pela Editora Trama.</h4><h5>História de Andreas McCullosh & Paladino</h5>",
 	"origin": "39",
-	"id": 29
+	"id": 30
 },{
 	"text": "<p>Tendo matado sozinho um enorme dragão vermelho, coisa que os mais valentes guerreiros não conseguiram ou se recusaram fazer, você  é aclamado como herói. O seu nome será uma lenda entre os cavaleiros da ordem de Hedryl, e você sempre encontrará amigos na vila de Mornard -  bem como em qualquerlugar onde os bardos cantem sua bravura. Parabéns, você conseguiu!</p><h3>Fim.</h3><h4>História publicada na revista Dragão Brasil Ano 1 número 12 pela Editora Trama.</h4><h5>História de Andreas McCullosh & Paladino</h5>",
 	"origin": "40",
-	"id": 30
+	"id": 31
 }]
 
 
