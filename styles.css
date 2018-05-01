@@ -2,4 +2,14 @@
 
 body{
 	font-family: 'Architects Daughter', cursive;
+	background-image: url(img/background.jpg);
+	background-image:  no-repeat;
+}
+.flex-container{
+	display: flex;
+}
+
+.flex-container > div{
+	margin: 10px 90px 10px 110px;
+  	padding: 20px;
 }
