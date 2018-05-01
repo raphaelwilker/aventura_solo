@@ -77,10 +77,10 @@ var json  = [{
 	"origin": "27",
 	"id": 7 ,
 	"options": [{
-		"text": "<li><a href='#'>Seguir pela montanha ? 18</a></li>",
+		"text": "<li><a href='#'>Seguir pela montanha ? </a></li>",
 		"goto": 9
 	}, {
-		"text": "<li><a href='#'>Seguir pelo vale ? 36</a></li>",
+		"text": "<li><a href='#'>Seguir pelo vale ?</a></li>",
 		"goto": 10
 	}]
 },{
