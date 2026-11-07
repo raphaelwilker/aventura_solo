@@ -35,6 +35,18 @@ node tools/convert.js tools/source/adventure.js game --force
 4. Siga a Task 7 do plano para o playthrough e a exportação, e anote os resultados em
    `docs/notas-de-build.md`.
 
+## Testes no Ren'Py (lint e playthrough)
+
+`tests/playthrough.rpy` roda os dois finais e a flag `ferido_pescoco` no próprio jogo. Ele **não** faz
+parte do jogo: copie para `game/` de um projeto de teste, rode e remova antes de gerar builds.
+
+```bash
+./renpy.sh <projeto> lint
+./renpy.sh <projeto> test playthrough
+```
+
+No Linux sem tela, prefixe com `xvfb-run -a`. Resultados e medidas em `docs/notas-de-build.md`.
+
 ## Mecânica
 
 Uma flag: `ferido_pescoco`. O nó 6 a liga (o scrag agarra o herói), o nó 0 a zera (inclusive ao
