@@ -77,12 +77,11 @@ fogueira, água, urso, dragão. Mesmas regras de licença.
 - **OpenGameArt.org:** filtrar por licença **CC0** (sem restrições) ou CC-BY (exige dar crédito).
 - **Wikimedia Commons, Pixabay, Unsplash:** fotos e pinturas de domínio público ou livres, úteis
   para montanha, estrada, rio e pântano; o estilo de foto pode destoar de ilustrações.
-- **Imagens geradas por IA:** dão estilo consistente, mas exigem conferir os termos de uso da
+- **Imagens geradas por IA:** dão estilo (anime) consistente, mas exigem conferir os termos de uso da
   ferramenta (uso comercial, direitos). Registrar a ferramenta e o prompt base em `assets.md`.
 
 Não verifiquei pacotes nem licenças específicas daqui: cada arquivo escolhido precisa da conferência
 e do registro em `assets.md`.
 
-## 6. Decisão que falta: estilo visual
-Misturar estilos (um pacote de cada lugar) deixa o jogo com aparência de colagem. Escolher **um**
-estilo e buscar tudo nele, ou gerar todo o conjunto com o mesmo prompt base.
+## 6. Estilo visual (decidido)
+**Anime**, por ser uma light novel. Regras, prompts por cenário e checklist em `guia-de-arte.md`.
