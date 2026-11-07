@@ -46,7 +46,7 @@
 
 ```js
 test('carrega os 32 nós com ids 0..31 contíguos')
-test('nó 0 tem 5 parágrafos e 2 opções: goto 1 e goto 2')
+test('nó 0 tem 6 parágrafos e 2 opções: goto 1 e goto 2')
 test('nó 0 opção 1 tem label "Agir com cautela e dar a volta ?" (sem HTML, sem remover o "?")')
 test('nós 30 e 31 não têm campo options no JSON e voltam com options []')
 test('nenhum parágrafo nem label contém "<" ou ">", e nenhum é vazio ou só espaços')

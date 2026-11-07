@@ -1,0 +1,9 @@
+{
+  "name": "aventura-solo-vn",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ferramentas para converter adventure.js em scripts Ren'Py",
+  "scripts": {
+    "test": "node --test \"tools/test/*.test.js\""
+  }
+}
