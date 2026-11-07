@@ -71,3 +71,21 @@ mesmo jeito: o jogo empacotado inicia sem `traceback.txt`. Projeto de empacotame
 `renpy.sh launcher generate_gui <pasta> --start` (sem o `guisupport.rpy`), com as imagens de botão,
 barra, scrollbar e slider que esse comando não gera copiadas do template em execução, mais os nossos
 arquivos. O pacote Windows novo não contém `guisupport` nem `gui7`.
+
+## 8. APK para Android
+Gerado em 2026-11-07 com o Ren'Py 8.5.3 + RAPT (`renpy.sh launcher android_build <projeto> --destination <pasta>`),
+JDK 21, Android SDK instalado por `rapt/android.py installsdk` (licença do Android SDK aceita pelo autor).
+- Arquivo: `com.aventurasolo.vn-1.0-<versionCode>-release.apk`, **51,3 MB**; pacote `com.aventurasolo.vn`
+  (ID provisório: trocar antes de publicar), versão 1.0, paisagem, `targetSdk` 36, arquiteturas
+  `arm64-v8a`, `armeabi-v7a` e `x86_64`.
+- Assinatura v1 e v2 verificadas com `apksigner`. Assinado com uma **chave de teste** (senha `android`,
+  `keytool`), gerada só para este build: serve para instalar e testar; **não serve para publicar**.
+  Para publicar (Google Play), criar a própria chave no launcher (Android > Gerar Chaves) e guardá-la:
+  quem perde a chave não consegue atualizar o app.
+- **Não foi executado em um aparelho nem em emulador**: só foram verificados o pacote e a assinatura.
+- Percalço: o Maven Central respondeu `429 Too Many Requests` a vários downloads do Gradle. Contornado com
+  um script de inicialização do Gradle que aponta para o espelho `repo1.maven.org` e com novas
+  tentativas (o Gradle guarda em cache o que já baixou). Configuração do app (`android.json`) criada pela
+  classe `Configuration` do RAPT, pois o comando de linha de comando não pergunta.
+- Permissões declaradas pelo Ren'Py: vibração, wake lock, leitura/escrita de armazenamento e serviço em
+  primeiro plano; o jogo em si não usa nenhuma.
