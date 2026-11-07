@@ -41,7 +41,7 @@ Projeto Ren'Py novo, em repositório separado do `aventura_solo` (que fica como 
 ```
 game/
   script/        # um .rpy por capítulo: cap01.rpy, cap02.rpy, ...; start.rpy
-  characters.rpy # personagens, cores, nomes
+  characters.rpy # personagens, cores, nomes (criado quando houver falas atribuídas; a v1 só tem narrador)
   state.rpy      # flags de decisão e afinidade
   screens.rpy    # customização de interface
   images/        # bg/, sprites/, cg/
@@ -77,15 +77,13 @@ texto lembra". Elas viram flags em `state.rpy`:
 
 | Flag | Origem no JSON |
 |---|---|
-| `tem_medalhao` | perdido (nó 12), usado contra mortos-vivos (nó 13) |
-| `tem_bolsa` / moedas | nós 14 a 18, 20, 21, 24 (pagar jangadeiro ou estalajadeiro) |
-| `poderes_cura` | uso dos poderes divinos de cura (nós 26 e 27) |
-| `tem_mapa` | mapa do garoto (nó 29), leva ao final 31 |
+| `ferido_pescoco` | ligada no nó 6 (o scrag agarra o herói); lida no nó 10, que no JSON é uma pergunta de estado ("você foi ferido no pescoço anteriormente?") e no jogo vira desvio automático: ligada vai ao nó 12 (morte), desligada ao nó 13 |
 
-As flags exatas são confirmadas lendo cada nó durante a escrita do plano. Onde o JSON hoje
-depende só do caminho fixo, as flags servem para a interface (ex.: ícones de itens) e para uma
-tela de finais desbloqueados via `persistent`. Testes de atributo podem ser adicionados depois
-com o Python embutido, sem refazer a estrutura.
+Confirmado lendo os 32 nós: essa é a única condição de estado do JSON. Medalhão, bolsa e moedas,
+poderes de cura e mapa aparecem só como texto, sem ramificação própria, e ficam fora da v1
+(YAGNI). A flag é zerada no nó 0, para que recomeçar após uma morte não herde o estado da partida
+anterior. Testes de atributo podem ser adicionados depois com o Python embutido, sem refazer a
+estrutura.
 
 ## 6. Interface
 
@@ -111,7 +109,10 @@ aparência padrão.
 
 ## 9. Verificação
 
-Ren'Py não tem framework de testes unitários típico. Verificação por:
+Ren'Py não tem framework de testes unitários típico. Na sessão de desenvolvimento em nuvem o SDK
+não pode ser baixado (`renpy.org` bloqueado pelo proxy), então o conversor e um validador estático
+em Node (testes com `node:test`) são o critério de aceite ali; `lint` e playthroughs rodam na
+máquina do autor. Verificação por:
 - `lint` do Ren'Py a cada capítulo;
 - playthrough de cada final;
 - garantir que nenhuma rota termina sem destino (nenhum `jump` para label inexistente).
