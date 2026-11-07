@@ -69,8 +69,9 @@ cenário** (`game/cenarios.rpy`).
 1280x720; também vale png ou webp) e pronto: o provisório some sozinho. Sem mexer em código.
 
 Os `scene` foram inseridos nos `.rpy` uma única vez (`node tools/add-scenes.js game/script`, que
-recusa rodar de novo). Para trocar o cenário de um nó, edite o `.rpy` à mão. O painel de texto NVL é
-translúcido (`characters.rpy`) para a imagem aparecer atrás.
+recusa rodar de novo). Para trocar o cenário de um nó, edite o `.rpy` à mão. O texto aparece no modo ADV, numa caixa larga na parte de baixo da tela (`characters.rpy`), translúcida
+para a imagem aparecer atrás. Parágrafos longos são divididos em trechos de até 230 caracteres
+(`node tools/split-lines.js game/script`, idempotente).
 
 ## Mecânica
 

@@ -6,7 +6,8 @@ personagens e CGs depois. Lista de cenas e nós em `lista-de-cenas.md`; licença
 ## Regras de estilo (para o conjunto parecer de uma mesma obra)
 - Cenários **sem personagens e sem texto** (as pessoas entram como sprites separados).
 - Fantasia medieval, paleta de cores com saturação média, luz suave, pintura com sombreado simples.
-- **Centro da imagem mais calmo ou mais escuro**: o texto NVL ocupa uma coluna ao centro.
+- **Parte de baixo da imagem mais calma ou mais escura**: o texto aparece numa caixa larga embaixo
+  (cerca de um quarto da altura), com o cenário visível por cima.
 - Formato 16:9, entregue em **1280x720** (gere em 1920x1080 ou maior e reduza). Cenários em JPG;
   personagens em PNG com fundo transparente.
 - Nome do arquivo: o ID da lista (`bg_pantano_dentro.jpg`), em `game/images/`.
@@ -72,4 +73,4 @@ standing, plain background` (e remover o fundo depois). Descrições dos persona
 - [ ] Sem texto, marca d'água ou personagens no cenário
 - [ ] 1280x720, JPG, nome igual ao ID
 - [ ] Licença conferida e linha preenchida em `assets.md`
-- [ ] Texto NVL continua legível por cima (testar no jogo)
+- [ ] O texto na caixa de baixo continua legível sobre a imagem (testar no jogo)

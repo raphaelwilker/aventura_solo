@@ -89,3 +89,18 @@ JDK 21, Android SDK instalado por `rapt/android.py installsdk` (licença do Andr
   classe `Configuration` do RAPT, pois o comando de linha de comando não pergunta.
 - Permissões declaradas pelo Ren'Py: vibração, wake lock, leitura/escrita de armazenamento e serviço em
   primeiro plano; o jogo em si não usa nenhuma.
+
+## 9. Texto em caixa embaixo (ADV), no lugar do NVL
+O autor pediu a disposição de uma visual novel de referência: caixa de texto larga na parte de baixo, cenário
+visível por cima. O modo NVL (seção 5) foi substituído pelo **ADV**:
+- `game/characters.rpy`: `narrador = Character(None)`, caixa de 1120 px de largura e 190 px de altura, marrom
+  translúcido (`#1a120ccc`), `yalign 0.92`; texto de 24 px com contorno leve; opções do menu e menu rápido
+  claros com destaque dourado. Sem restos de NVL (um teste garante).
+- O emissor passou a gerar uma linha `narrador` por parágrafo, sem `nvl clear`; `tools/split-lines.js` divide as
+  linhas longas por frase (depois por vírgula, depois por palavra) em trechos de até 230 caracteres. Conferido que o
+  **texto é idêntico** nos 32 nós (só muda a divisão) e que menus, saltos, cenários e a flag não mudaram:
+  112 para 166 linhas de fala, a maior com 230 caracteres.
+- Verificado no Ren'Py 8.5.3: lint limpo, 3 playthroughs passando (mais cliques por nó; as esperas ganharam limite
+  explícito de 60 s) e capturas de tela com a estrada de verdade atrás da caixa.
+- Quando as escolhas aparecem, a última fala some (comportamento padrão do ADV) e as opções ficam no centro, em barras
+  escuras. Se o autor quiser a fala visível junto das escolhas, é um ajuste à parte.

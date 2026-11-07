@@ -41,7 +41,7 @@ Projeto Ren'Py novo, em repositório separado do `aventura_solo` (que fica como 
 ```
 game/
   script/        # um .rpy por capítulo: cap01.rpy, cap02.rpy, ...; start.rpy
-  characters.rpy # narrador em modo NVL e ajustes de NVL (personagens falantes entram aqui quando houver)
+  characters.rpy # narrador (ADV), caixa de texto e estilos de interface (personagens falantes entram aqui quando houver)
   state.rpy      # flags de decisão e afinidade
   screens.rpy    # customização de interface
   images/        # bg/, sprites/, cg/
@@ -87,10 +87,11 @@ estrutura.
 
 ## 6. Interface
 
-O texto usa o **modo NVL** do Ren'Py (o texto ocupa a tela, como numa light novel): os parágrafos
-do livro-jogo são longos (mediana de 205 caracteres) e não cabem na caixa de diálogo padrão. O
-emissor abre uma nova página (`nvl clear`) a cada nó e quando a página passaria de 900
-caracteres; as escolhas aparecem junto do texto (`menu = nvl_menu`).
+O texto usa o **modo ADV** do Ren'Py: uma caixa larga na parte de baixo da tela, translúcida, com o
+cenário visível por cima (disposição escolhida pelo autor, a partir de uma visual novel de referência).
+Os parágrafos do livro-jogo são longos (mediana de 205 caracteres), então são divididos por frase em
+trechos de até 230 caracteres, sem alterar nenhuma palavra; as escolhas aparecem no centro da tela.
+(O modo NVL foi tentado antes e substituído por este.)
 
 Tela de título, menu de pausa, galeria de CGs, histórico, configurações e save/load (a maior parte
 já vem no Ren'Py). Um tema visual único (cores, fonte, moldura da caixa de texto) para fugir da

@@ -14,10 +14,8 @@ const GAME_SCRIPT = path.join(__dirname, '..', '..', 'game', 'script');
 
 const SAMPLE = [
   'label no_05:',
-  '    nvl clear',
   '    narrador "A"',
   '    narrador "B"',
-  '    nvl clear',
   '    narrador "C"',
   '    menu:',
   '        "X":',
@@ -25,20 +23,15 @@ const SAMPLE = [
   '',
 ].join('\n');
 
-test('cenário em from=0 entra logo depois do nvl clear inicial, antes do primeiro parágrafo', () => {
+test('cenário em from=0 entra antes do primeiro parágrafo', () => {
   const out = addScenes(SAMPLE, { 5: [{ bg: 'bg_estrada', from: 0 }] }).text;
-  assert.ok(out.includes('    nvl clear\n    scene bg_estrada with dissolve\n    narrador "A"'));
+  assert.ok(out.includes('label no_05:\n    scene bg_estrada with dissolve\n    narrador "A"'));
 });
 
-test('mudança no meio de uma página abre página nova: nvl clear e depois scene', () => {
-  const out = addScenes(SAMPLE, { 5: [{ bg: 'bg_a', from: 0 }, { bg: 'bg_b', from: 1 }] }).text;
-  assert.ok(out.includes('    narrador "A"\n    nvl clear\n    scene bg_b with dissolve\n    narrador "B"'));
-});
-
-test('mudança numa fronteira de página já existente não duplica o nvl clear', () => {
-  const out = addScenes(SAMPLE, { 5: [{ bg: 'bg_a', from: 0 }, { bg: 'bg_c', from: 2 }] }).text;
-  assert.ok(out.includes('    narrador "B"\n    nvl clear\n    scene bg_c with dissolve\n    narrador "C"'));
-  assert.ok(!out.includes('nvl clear\n    nvl clear'));
+test('mudança no meio do nó entra logo antes do parágrafo indicado', () => {
+  const out = addScenes(SAMPLE, { 5: [{ bg: 'bg_a', from: 0 }, { bg: 'bg_b', from: 1 }, { bg: 'bg_c', from: 2 }] }).text;
+  assert.ok(out.includes('    narrador "A"\n    scene bg_b with dissolve\n    narrador "B"\n    scene bg_c with dissolve\n    narrador "C"'));
+  assert.ok(!out.includes('nvl'));
 });
 
 test('não altera nenhuma linha de texto nem de menu', () => {
@@ -102,28 +95,26 @@ test('aplicar SCENES a scripts recém-convertidos valida: 33 labels alcançávei
   assert.strictEqual((total.match(/^\s+scene /gm) || []).length, Object.values(SCENES).flat().length);
 });
 
-test('o jogo real tem, em cada nó, os cenários de SCENES no parágrafo certo e sempre depois de um nvl clear', () => {
+test('o jogo real tem, em cada nó, os cenários de SCENES na ordem certa, cada um logo antes de um parágrafo, e nenhum nvl clear', () => {
   const found = {};
   for (const f of fs.readdirSync(GAME_SCRIPT)) {
     const lines = fs.readFileSync(path.join(GAME_SCRIPT, f), 'utf8').split('\n');
     let node = null;
-    let say = -1;
     lines.forEach((l, i) => {
       const m = l.match(/^label no_(\d\d):/);
       if (m) {
         node = Number(m[1]);
-        say = -1;
         found[node] = [];
-      } else if (/^\s+narrador "/.test(l)) {
-        say += 1;
-      } else {
-        const sc = l.match(/^\s+scene (\w+) with dissolve$/);
-        if (sc) {
-          assert.strictEqual(lines[i - 1], '    nvl clear', `nó ${node}: scene sem nvl clear antes`);
-          found[node].push({ bg: sc[1], from: say + 1 });
-        }
+        return;
+      }
+      assert.ok(!/nvl/.test(l), `nó ${node}: sobrou "nvl" no script`);
+      const sc = l.match(/^\s+scene (\w+) with dissolve$/);
+      if (sc) {
+        assert.match(lines[i + 1], /^\s+narrador "/, `nó ${node}: scene sem parágrafo logo depois`);
+        found[node].push(sc[1]);
       }
     });
   }
-  assert.deepStrictEqual(found, SCENES);
+  const expected = Object.fromEntries(Object.entries(SCENES).map(([id, list]) => [id, list.map((x) => x.bg)]));
+  assert.deepStrictEqual(found, expected);
 });

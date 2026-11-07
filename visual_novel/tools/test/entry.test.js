@@ -17,24 +17,25 @@ test('state.rpy declara "default ferido_pescoco = False"', () => {
   assert.match(state, /^default ferido_pescoco = False$/m);
 });
 
-test('characters.rpy define o narrador em modo NVL e menus no modo NVL', () => {
+test('characters.rpy define o narrador em modo ADV (caixa de texto embaixo), sem restos do modo NVL', () => {
   const c = fs.readFileSync(path.join(GAME, 'characters.rpy'), 'utf8');
-  assert.match(c, /^define narrador = Character\(None, kind=nvl\)$/m);
-  assert.match(c, /^define config\.narrator_menu = True$/m);
-  assert.match(c, /^define menu = nvl_menu$/m); // sem isso o texto some quando o menu aparece
+  assert.match(c, /^define narrador = Character\(None\)$/m);
+  assert.ok(!/nvl/.test(c), 'sobrou configuração NVL');
 });
 
-test('characters.rpy deixa a altura de cada parágrafo NVL automática (o template fixa em 115 e o texto longo se sobrepõe)', () => {
+test('characters.rpy define a caixa de texto: larga, na parte de baixo, translúcida', () => {
   const c = fs.readFileSync(path.join(GAME, 'characters.rpy'), 'utf8');
-  assert.match(c, /^define gui\.nvl_height = None$/m);
+  assert.match(c, /^style window:\n(    .+\n)*    xsize 1120$/m);
+  assert.match(c, /^    background Solid\("#1a120ccc"\)$/m);
+  assert.match(c, /^define gui\.textbox_height = 190$/m);
 });
 
-test('characters.rpy troca o painel NVL (quase opaco no template) por um translúcido, para a imagem do cenário aparecer', () => {
+test('characters.rpy deixa as opções do menu claras e com destaque (o cinza do template some sobre a arte)', () => {
   const c = fs.readFileSync(path.join(GAME, 'characters.rpy'), 'utf8');
-  assert.match(c, /^style nvl_window:\n    background Solid\("#000000a0"\)$/m);
+  assert.match(c, /^style choice_button_text:\n    idle_color "#f0f0f0"\n    hover_color "#ffd479"$/m);
 });
 
-test('characters.rpy deixa as opções do menu NVL claras e com destaque (o cinza do template some sobre a arte)', () => {
+test('characters.rpy deixa o menu rápido (Back, History, Skip...) branco com contorno, legível sobre o cenário', () => {
   const c = fs.readFileSync(path.join(GAME, 'characters.rpy'), 'utf8');
-  assert.match(c, /^style nvl_button_text:\n    idle_color "#f0f0f0"\n    hover_color "#ffd479"$/m);
+  assert.match(c, /^style quick_button_text:\n    idle_color "#ffffff"\n    hover_color "#ffd479"\n    outlines \[ \(1, "#000000c0", 0, 1\) \]$/m);
 });

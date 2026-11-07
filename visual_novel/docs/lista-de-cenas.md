@@ -3,8 +3,8 @@
 Levantada lendo os 32 nós do texto. Formato: **1280x720** (a resolução do projeto), JPG para cenários
 e PNG com fundo transparente para personagens. Todo asset entra em `assets.md` com fonte e licença.
 
-Como o jogo usa o **modo NVL**, o texto ocupa uma coluna no centro da tela. Cenários com a parte
-central calma ou escura leem melhor; se precisar, escurecemos o fundo atrás do texto.
+Como o texto aparece numa caixa larga na parte de baixo da tela (modo ADV), cenários com a parte de baixo
+calma ou escura leem melhor; se precisar, a caixa translúcida já escurece o fundo atrás do texto.
 
 ## 1. Cenários (prioridade 1: o jogo fica completo só com estes)
 

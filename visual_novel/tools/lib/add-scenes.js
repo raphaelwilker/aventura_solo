@@ -1,9 +1,10 @@
 const LABEL = /^label no_(\d\d):/;
 const SAY = /^\s+narrador "/;
-const CLEAR = '    nvl clear';
 
 // Insere linhas `scene` nos scripts .rpy já existentes, sem tocar no texto.
-// sceneMap: { [idDoNó]: [{ bg, from }] }. Devolve { text, applied } (applied = nós encontrados neste texto).
+// sceneMap: { [idDoNó]: [{ bg, from }] }, em que `from` é o índice do parágrafo (0 = o primeiro).
+// Roda antes de dividir os parágrafos longos (split-lines), quando cada narrador é um parágrafo.
+// Devolve { text, applied } (applied = nós encontrados neste texto).
 function addScenes(text, sceneMap) {
   const lines = text.split('\n');
   const starts = [];
@@ -28,9 +29,7 @@ function addScenes(text, sceneMap) {
     [...list].sort((x, y) => y.from - x.from).forEach(({ bg, from }) => {
       const t = say[from];
       if (t === undefined) throw new Error(`no_${String(id).padStart(2, '0')}: parágrafo ${from} não existe`);
-      const scene = `    scene ${bg} with dissolve`;
-      if (lines[t - 1] === CLEAR) lines.splice(t, 0, scene);
-      else lines.splice(t, 0, CLEAR, scene);
+      lines.splice(t, 0, `    scene ${bg} with dissolve`);
     });
     applied.push(id);
   }

@@ -1,6 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert');
-const { labelName, escapeRpy, emitNode, NVL_PAGE_CHARS } = require('../lib/emit-rpy');
+const { labelName, escapeRpy, emitNode } = require('../lib/emit-rpy');
 
 const node = (id, paragraphs, options) => ({ id, origin: '', paragraphs, options });
 
@@ -13,14 +13,13 @@ test('escapeRpy escapa \\ " [ { %', () => {
   assert.strictEqual(escapeRpy('a\\b"c[d{e%f'), 'a\\\\b\\"c[[d{{e%%f');
 });
 
-test('nó comum: label, nvl clear, um parágrafo por linha com o narrador e menu com um jump por opção', () => {
+test('nó comum: label, um parágrafo por linha com o narrador (ADV, sem nvl clear) e menu com um jump por opção', () => {
   const out = emitNode(node(5, ['A', 'B'], [
     { label: 'X', goto: 7 },
     { label: 'Y', goto: 8 },
   ]));
   assert.strictEqual(out, [
     'label no_05:',
-    '    nvl clear',
     '    narrador "A"',
     '    narrador "B"',
     '    menu:',
@@ -72,25 +71,8 @@ test('nó de morte oferece Recomeçar e volta ao no_00', () => {
   assert.ok(out.includes('        "Recomeçar.":\n            jump no_00\n'));
 });
 
-test('NVL_PAGE_CHARS é 900', () => {
-  assert.strictEqual(NVL_PAGE_CHARS, 900);
-});
-
-test('parágrafos que cabem em uma página não geram nvl clear extra', () => {
-  const out = emitNode(node(2, ['x'.repeat(400), 'y'.repeat(400)], []));
-  assert.strictEqual(out.match(/nvl clear/g).length, 1);
-});
-
-test('quando o próximo parágrafo estoura a página, emite nvl clear antes dele', () => {
+test('o emissor não usa mais o modo NVL: nenhum nvl clear, mesmo com parágrafos longos', () => {
   const out = emitNode(node(2, ['x'.repeat(400), 'y'.repeat(400), 'z'.repeat(400)], []));
-  const lines = out.split('\n');
-  const clears = lines.map((l, i) => (l === '    nvl clear' ? i : -1)).filter((i) => i >= 0);
-  assert.strictEqual(clears.length, 2);
-  assert.ok(lines[clears[1] + 1].includes('z'.repeat(10)), 'o parágrafo z abre a segunda página');
-  assert.ok(lines[clears[1] - 1].includes('y'.repeat(10)), 'x e y ficam na primeira página');
-});
-
-test('um parágrafo maior que a página fica sozinho, sem nvl clear vazio', () => {
-  const out = emitNode(node(2, ['x'.repeat(NVL_PAGE_CHARS + 100)], []));
-  assert.strictEqual(out.match(/nvl clear/g).length, 1);
+  assert.ok(!out.includes('nvl'));
+  assert.strictEqual(out.match(/narrador "/g).length, 3);
 });
