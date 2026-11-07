@@ -61,3 +61,13 @@ Achado: o painel NVL do template (`gui/nvl.png`) é quase opaco e escondia o cen
 painel translúcido (`#000000a0`). Testado com uma imagem clara e movimentada (de teste, não do jogo):
 imagem visível e texto legível. As opções do menu (cinza) ficam um pouco apagadas sobre fundos muito
 claros; ajustar a cor do botão se incomodar quando houver arte final.
+
+## 7. Erro no build do Windows: `No module named 'gui7'`
+O primeiro build Windows falhou ao abrir. Causa: o projeto de empacotamento foi montado a partir do
+template `gui/game` do SDK, que inclui `game/guisupport.rpy`; esse arquivo importa `gui7`, que só existe
+no SDK. Meus testes rodavam o jogo de dentro do SDK (onde o módulo existe) e não pegaram o problema.
+Reproduzido extraindo o build Linux antigo e executando-o (mesmo erro), corrigido e verificado do
+mesmo jeito: o jogo empacotado inicia sem `traceback.txt`. Projeto de empacotamento novo: gerado com
+`renpy.sh launcher generate_gui <pasta> --start` (sem o `guisupport.rpy`), com as imagens de botão,
+barra, scrollbar e slider que esse comando não gera copiadas do template em execução, mais os nossos
+arquivos. O pacote Windows novo não contém `guisupport` nem `gui7`.

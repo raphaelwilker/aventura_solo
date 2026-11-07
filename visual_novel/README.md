@@ -28,6 +28,15 @@ node tools/convert.js tools/source/adventure.js game --force
 **Atenção:** os scripts já têm texto revisado e cenários inseridos à mão/ferramenta. O texto já foi revisado à mão (ver `docs/correcoes-de-texto.md`). Gerar de novo com
 `--force` traz de volta o texto original, com os erros de digitação.
 
+## Cuidado ao empacotar (aprendido na prática)
+
+**Nunca use o template `gui/game` do SDK como projeto para gerar builds.** Ele traz o
+`guisupport.rpy`, que importa o módulo `gui7` (só existe dentro do SDK). Funciona rodando de dentro do
+SDK, mas o jogo empacotado dá `ModuleNotFoundError: No module named 'gui7'` ao abrir. Crie o projeto
+pelo launcher (**Criar um novo projeto**), que não inclui esse arquivo, e copie os nossos arquivos
+para dentro. Sempre teste o jogo **empacotado** (extraia o build e abra), e não só o jogo rodando
+pelo launcher.
+
 ## Integrar com o Ren'Py (8.x)
 
 1. No launcher do Ren'Py, crie um projeto novo (ex.: `aventura_solo_vn`). Isso gera `gui/`,
