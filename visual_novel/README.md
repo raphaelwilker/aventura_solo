@@ -25,6 +25,9 @@ node tools/convert.js tools/source/adventure.js game --force
 
 `--force` **apaga qualquer edição manual** nesses três arquivos. Sem `--force`, o conversor recusa.
 
+**Atenção:** o texto já foi revisado à mão (ver `docs/correcoes-de-texto.md`). Gerar de novo com
+`--force` traz de volta o texto original, com os erros de digitação.
+
 ## Integrar com o Ren'Py (8.x)
 
 1. No launcher do Ren'Py, crie um projeto novo (ex.: `aventura_solo_vn`). Isso gera `gui/`,

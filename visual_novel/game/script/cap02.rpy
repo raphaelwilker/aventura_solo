@@ -2,8 +2,8 @@
 
 label no_07:
     nvl clear
-    narrador "A jornada pelo caminho da direita é tranquila. Uma estalagem surge ao longe, e você apressa o passo - imaginando quão bom será comer uma refeição quente e dormir em uma cama macia. você consegue um quarto, devora um grande pedaço de carne (felizmente sua ordem não exige dieta vegetariana), lava-se e vai dormir."
-    narrador "Pela manhã, após um rápido desjejum, você retoma o caminho da vila de Terum. A estrada birfuca-se novamente logo adiante: o caminho da direita segue sobre uma montanha, e o da esquerda passa por um vale que contorna a montanha."
+    narrador "A jornada pelo caminho da direita é tranquila. Uma estalagem surge ao longe, e você apressa o passo - imaginando quão bom será comer uma refeição quente e dormir em uma cama macia. Você consegue um quarto, devora um grande pedaço de carne (felizmente sua ordem não exige dieta vegetariana), lava-se e vai dormir."
+    narrador "Pela manhã, após um rápido desjejum, você retoma o caminho da vila de Terum. A estrada bifurca-se novamente logo adiante: o caminho da direita segue sobre uma montanha, e o da esquerda passa por um vale que contorna a montanha."
     menu:
         "Seguir pela montanha ?":
             jump no_09
@@ -12,18 +12,18 @@ label no_07:
 
 label no_08:
     nvl clear
-    narrador "O caminho da esquerda leva você a um gingantesco desfiladeiro. A fenda é enorme, e não há como chegar ao outro lado. Irritado pela perda de tempo, você volta para a encruzilhada e toma o caminho da direita"
+    narrador "O caminho da esquerda leva você a um gigantesco desfiladeiro. A fenda é enorme, e não há como chegar ao outro lado. Irritado pela perda de tempo, você volta para a encruzilhada e toma o caminho da direita."
     menu:
         "Continuar.":
             jump no_07
 
 label no_09:
     nvl clear
-    narrador "O caminho da montanha pareceu mais atraente. Seguindo por uma trilha que passa entre as rochas, sob sombras refrescantes, você pensa em como seria penosa a caminhada pelo vale castigado pelo sol. Mas a trilha rochosa também apresenta suas desvantagens, como você descobre logo a seguir: vinde de uma caverna próxima, um urro poderoso anuncia a chegada de um enorme urso cinzento."
-    narrador "A fera aproxima-se nas patas de trás, pronta a golpear  com suas garras negras. você saca a Espada Sagrada, mas entende que o animal apenas tenta proteger sua toca - talvez seja até mesmo uma fêmea com filhotes -, e não deseja matá-lo. A este pensamento , a lâmina emite uma luz intensa que fere os olhos do urso, afugentando-o."
+    narrador "O caminho da montanha pareceu mais atraente. Seguindo por uma trilha que passa entre as rochas, sob sombras refrescantes, você pensa em como seria penosa a caminhada pelo vale castigado pelo sol. Mas a trilha rochosa também apresenta suas desvantagens, como você descobre logo a seguir: vindo de uma caverna próxima, um urro poderoso anuncia a chegada de um enorme urso cinzento."
+    narrador "A fera aproxima-se nas patas de trás, pronta a golpear com suas garras negras. Você saca a Espada Sagrada, mas entende que o animal apenas tenta proteger sua toca - talvez seja até mesmo uma fêmea com filhotes -, e não deseja matá-lo. A este pensamento, a lâmina emite uma luz intensa que fere os olhos do urso, afugentando-o."
     narrador "Agradecendo aos deuses por uma solução pacífica para seu dilema, você segue em frente."
     nvl clear
-    narrador "Depois de afungentar o urso, você continua pela trilha que singra a montanha. Em certo ponto é obrigado a parar: parte do caminho foi destruída por um desmoronamento"
+    narrador "Depois de afugentar o urso, você continua pela trilha que singra a montanha. Em certo ponto é obrigado a parar: parte do caminho foi destruída por um desmoronamento."
     narrador "A escalada parece possível, embora perigosa."
     menu:
         "Escalar?":
@@ -33,8 +33,8 @@ label no_09:
 
 label no_10:
     nvl clear
-    narrador "O sol castiga você enquanto cruza o vale, fazendo-o pensar se não seria preferível ir pela montanha. A dúvida transforma-se em certeza quando, ápos algumas horas, você penetra em um antigo campo de batalha: uma clareira cheia de armaduras enferrujadas, armas quebradas e ossos humanos"
-    narrador "você reza pelas almas desses guerreiros enquanto atravessa a clareira. Em certo mo, coisas movem-se no chão. A princípio você pensa se tratar de bichos escondidos nas carcaças, mas então você percebe: são as próprias carcaças. Os mortos estão se levantando para atacar você."
+    narrador "O sol castiga você enquanto cruza o vale, fazendo-o pensar se não seria preferível ir pela montanha. A dúvida transforma-se em certeza quando, após algumas horas, você penetra em um antigo campo de batalha: uma clareira cheia de armaduras enferrujadas, armas quebradas e ossos humanos."
+    narrador "Você reza pelas almas desses guerreiros enquanto atravessa a clareira. Em certo momento, coisas movem-se no chão. A princípio você pensa se tratar de bichos escondidos nas carcaças, mas então você percebe: são as próprias carcaças. Os mortos estão se levantando para atacar você."
     if ferido_pescoco:
         jump no_12
     else:
@@ -42,7 +42,7 @@ label no_10:
 
 label no_11:
     nvl clear
-    narrador "Julgando que o risco da escalada vale a pena, você avança. Sobe devagar, procurando saliêcias firmes para se apoiar, sofrendo com o peso da armadura. No caminho até o topo, o inesperado acontece: sua bolsa de moedas cai, e rola até alguns metros abaixo de onde você está."
+    narrador "Julgando que o risco da escalada vale a pena, você avança. Sobe devagar, procurando saliências firmes para se apoiar, sofrendo com o peso da armadura. No caminho até o topo, o inesperado acontece: sua bolsa de moedas cai, e rola até alguns metros abaixo de onde você está."
     menu:
         "Voltar e recuperar a bolsa.":
             jump no_14
@@ -51,8 +51,8 @@ label no_11:
 
 label no_12:
     nvl clear
-    narrador "você leva a mão ao pescoço, em busca de seu símbolo sagrado-o pequeno medalhão que poderá canaliza sua fé e esconjurar os mortos-vivos. Não encontra: deve ter sido arrancado no momento em que o scrag agarrou-o no pesco."
-    narrador "Agora só resta lutar. À medida que os mortos-vivos se aproximam, você começa a brandir sua espada. A lâminasagrada transforma-os em pedaços facilmente-mas, para cada um que cai, dez outros se levantam-se. A luta incessante esgota suas forças, e os cadáveres acabam alcançando-o. você sucumbe ao ataque de suas garras."
+    narrador "Você leva a mão ao pescoço, em busca de seu símbolo sagrado - o pequeno medalhão que poderá canalizar sua fé e esconjurar os mortos-vivos. Não encontra: deve ter sido arrancado no momento em que o scrag agarrou-o no pescoço."
+    narrador "Agora só resta lutar. À medida que os mortos-vivos se aproximam, você começa a brandir sua espada. A lâmina sagrada transforma-os em pedaços facilmente - mas, para cada um que cai, dez outros se levantam. A luta incessante esgota suas forças, e os cadáveres acabam alcançando-o. Você sucumbe ao ataque de suas garras."
     narrador "Fim."
     menu:
         "Recomeçar":
@@ -60,16 +60,16 @@ label no_12:
 
 label no_13:
     nvl clear
-    narrador "Com a aproximação dos putrefatos mortos-vivos, você busca o pequeno medalhão de prata em formato de espada, o símbolo da justiça de Hedryl. Com uma prece, vocêpede a seu deus  que afaste as criaturas malditas."
+    narrador "Com a aproximação dos putrefatos mortos-vivos, você busca o pequeno medalhão de prata em formato de espada, o símbolo da justiça de Hedryl. Com uma prece, você pede a seu deus que afaste as criaturas malditas."
     narrador "Os cadáveres parecem espantados com a visão da pequena espada. Alguns emitem gritos sufocados e desmancham-se em pó, enquanto outros somem na escuridão. Agora é seguro prosseguir."
     narrador "Sua viagem é interrompida por um rio com cerca de 50 metros de largura. Sua armadura proíbe qualquer tentativa de cruzá-lo a nado. Há uma ponte nas proximidades, mas ela parece velha e fraca demais para suportar um guerreiro pesadamente equipado."
-    narrador "Enquanto você examina a ponte, uma pequena jangada aproxima-se. Seu ocupante é um homem de pele escura que tira o chapéu de palha e o comprimenta-o com um sorriso de dentes falhos:"
+    narrador "Enquanto você examina a ponte, uma pequena jangada aproxima-se. Seu ocupante é um homem de pele escura que tira o chapéu de palha e o cumprimenta-o com um sorriso de dentes falhos:"
     nvl clear
-    narrador "- Não se arrisque  nessa ponte apodrecida senhor. Por duas peças de cobre, posso levá-lo à outra margem em minha jangada."
+    narrador "- Não se arrisque nessa ponte apodrecida senhor. Por duas peças de cobre, posso levá-lo à outra margem em minha jangada."
     menu:
         "Aceitar ?":
             jump no_16
-        "Regeitar ?":
+        "Rejeitar ?":
             jump no_17
 
 label no_14:
@@ -83,10 +83,10 @@ label no_14:
 
 label no_15:
     nvl clear
-    narrador "Você se recorda os ensinamentos dos clérigos de sua ordem, sobre como a ganância sempre leva à ruina."
-    narrador "Arriscar-se por algumas moedas não seria sábio. você esquece a bolsa e completa a escalada atravessando o desmoronamento em segurança e retornando à trilha."
-    narrador "você continua no caminho até que, restando apenas alguns minutos para o pôr-do-sol, avista uma estalagem e segue para lá."
-    narrador "A estalagem é quente e acolhedora. você se senta em uma mesa próxima à lareira, e uma rapariga serve-lhe um prato de sopa fumegante. Antes que você possa dizer qualquer coisa, um homem aixo e de grandes bigodes apresenta-se como Stew, o dono do estabelecimento. Diz que a sopa é poor conta da casa, e que um quarto, comida e um banhão custarão quatro peças de cobre."
+    narrador "Você se recorda os ensinamentos dos clérigos de sua ordem, sobre como a ganância sempre leva à ruína."
+    narrador "Arriscar-se por algumas moedas não seria sábio. Você esquece a bolsa e completa a escalada atravessando o desmoronamento em segurança e retornando à trilha."
+    narrador "Você continua no caminho até que, restando apenas alguns minutos para o pôr-do-sol, avista uma estalagem e segue para lá."
+    narrador "A estalagem é quente e acolhedora. Você se senta em uma mesa próxima à lareira, e uma rapariga serve-lhe um prato de sopa fumegante. Antes que você possa dizer qualquer coisa, um homem baixo e de grandes bigodes apresenta-se como Stew, o dono do estabelecimento. Diz que a sopa é por conta da casa, e que um quarto, comida e um banhão custarão quatro peças de cobre."
     menu:
         "Revelar sua missão ?":
             jump no_22
@@ -95,8 +95,8 @@ label no_15:
 
 label no_16:
     nvl clear
-    narrador "Você entrega algumas moedas ao homem, que coloca a jangada em movimento. Quando estão no meio do rio, contudo, o jangadeiro exibe um sorriso matereiro:"
-    narrador "- Agora, amigo,  se quiser chegar à outra margem com vida, irá  entregar-me todo o seu dinheiro."
+    narrador "Você entrega algumas moedas ao homem, que coloca a jangada em movimento. Quando estão no meio do rio, contudo, o jangadeiro exibe um sorriso matreiro:"
+    narrador "- Agora, amigo, se quiser chegar à outra margem com vida, irá entregar-me todo o seu dinheiro."
     menu:
         "Entregar todo o dinheiro.":
             jump no_18
@@ -105,9 +105,9 @@ label no_16:
 
 label no_17:
     nvl clear
-    narrador "Você olha melhor para a ponte, e acha que ela não irá desabar sob os pés de um servo dos deuses.Agradecendo ao jangadeiro pela oferta, você declina e segue pela ponte.Ela range um pouco em protesto, mas cumpre seu papel; você chega ao outro lado em segurança."
+    narrador "Você olha melhor para a ponte, e acha que ela não irá desabar sob os pés de um servo dos deuses. Agradecendo ao jangadeiro pela oferta, você declina e segue pela ponte. Ela range um pouco em protesto, mas cumpre seu papel; você chega ao outro lado em segurança."
     narrador "O rio e a ponte foram deixados para trás. A noite cairá logo. As luzes de uma taverna podem ser vistas ao longe, e você segue para lá."
-    narrador "A estalagem é quente e acolhedora. você se senta em uma mesa próxima à lareira, e uma rapariga serve-lhe um prato de sopa fumegante. Antes que você possa dizer qualquer coisa, um homem aixo e de grandes bigodes apresenta-se como Stew, o dono do estabelecimento. Diz que a sopa é poor conta da casa, e que um quarto, comida e um banhão custarão quatro peças de cobre."
+    narrador "A estalagem é quente e acolhedora. Você se senta em uma mesa próxima à lareira, e uma rapariga serve-lhe um prato de sopa fumegante. Antes que você possa dizer qualquer coisa, um homem baixo e de grandes bigodes apresenta-se como Stew, o dono do estabelecimento. Diz que a sopa é por conta da casa, e que um quarto, comida e um banhão custarão quatro peças de cobre."
     menu:
         "Pagar ?":
             jump no_24
@@ -118,11 +118,11 @@ label no_17:
 
 label no_18:
     nvl clear
-    narrador "Você analisa sua situação: está no meio de um rio, em uma frágil jangada, que pode desmanchar-se se tentar um combate. Sua armadura faria com que afundasse feito pedra. Dando de ombros, voce entrega a bolsa. O jangadeiro sorri em aprovação e prossegue remando."
-    narrador "Quando estão próximos da margem, um remo atinge suas costas e derruba você na água. Felizmente a água não é profunda aqui - mas, quando consegue se levantar, o jangadeiro já está longe. você amaldiçoa sua tolice, prometendo a si mesmo que , depois do dragão esse assaltante será o próximo a provar a justiça de Hedryl"
-    narrador "A viagemsegue tranquila. Quando o sol aproxima-se do horizonte, você vê uma estalagem e segue sua direção."
+    narrador "Você analisa sua situação: está no meio de um rio, em uma frágil jangada, que pode desmanchar-se se tentar um combate. Sua armadura faria com que afundasse feito pedra. Dando de ombros, você entrega a bolsa. O jangadeiro sorri em aprovação e prossegue remando."
+    narrador "Quando estão próximos da margem, um remo atinge suas costas e derruba você na água. Felizmente a água não é profunda aqui - mas, quando consegue se levantar, o jangadeiro já está longe. Você amaldiçoa sua tolice, prometendo a si mesmo que, depois do dragão, esse assaltante será o próximo a provar a justiça de Hedryl."
+    narrador "A viagem segue tranquila. Quando o sol aproxima-se do horizonte, você vê uma estalagem e segue sua direção."
     nvl clear
-    narrador "A estalagem é quente e acolhedora. você se senta em uma mesa próxima à lareira, e uma rapariga serve-lhe um prato de sopa fumegante. Antes que você possa dizer qualquer coisa, um homem aixo e de grandes bigodes apresenta-se como Stew, o dono do estabelecimento. Diz que a sopa é poor conta da casa, e que um quarto, comida e um banhão custarão quatro peças de cobre."
+    narrador "A estalagem é quente e acolhedora. Você se senta em uma mesa próxima à lareira, e uma rapariga serve-lhe um prato de sopa fumegante. Antes que você possa dizer qualquer coisa, um homem baixo e de grandes bigodes apresenta-se como Stew, o dono do estabelecimento. Diz que a sopa é por conta da casa, e que um quarto, comida e um banhão custarão quatro peças de cobre."
     menu:
         "Revelar sua missão ?":
             jump no_22
@@ -131,7 +131,7 @@ label no_18:
 
 label no_19:
     nvl clear
-    narrador "Você continua descendo em busca de seus pertences, mas a armadura é desajeitada para alpinismo. Em certo ponto você  perde o apoio e cai. Pois é, você esqueceu os ensinamentos de sua ordem, e deixou que a ganância fosse maior que a prudência. Seu cadáver arrebentado servirá de alimento para abutres e hienas."
+    narrador "Você continua descendo em busca de seus pertences, mas a armadura é desajeitada para alpinismo. Em certo ponto você perde o apoio e cai. Pois é, você esqueceu os ensinamentos de sua ordem, e deixou que a ganância fosse maior que a prudência. Seu cadáver arrebentado servirá de alimento para abutres e hienas."
     menu:
         "Recomeçar":
             jump no_00
@@ -147,7 +147,7 @@ label no_20:
 
 label no_21:
     nvl clear
-    narrador "você ri do jangadeiro, perguntando se é alguma brincadeira. Quando entende que não receberá dinheiro algum, o assaltante empurra você com um movimento rápido do remo. O peso da armadura desequilibra você, fazendo com que caia na água e afunde."
+    narrador "Você ri do jangadeiro, perguntando se é alguma brincadeira. Quando entende que não receberá dinheiro algum, o assaltante empurra você com um movimento rápido do remo. O peso da armadura desequilibra você, fazendo com que caia na água e afunde."
     narrador "Afogamento. Que triste fim para um guerreiro de Hedryl..."
     narrador "Fim."
     menu:
@@ -156,13 +156,13 @@ label no_21:
 
 label no_22:
     nvl clear
-    narrador "Você aceita a sopa, mas diz que não pode pagar. Wuando o estalajadeiro pergunta o que alguém faz sem dinheiro em um lugar como aquele, ocê fala sobre sua caça ao dragão que ameaça a vila de Mornard."
-    narrador "-Um guerreirofr Hedryl! - espanta-se o pequeno Stew. -Não se preocupe com o dinheiro, nobre herói. Será uma honra ajudá-lo em sua missão sagrada, especialmente se puder livrar Mornard daquele monstro ganancioso. Ele está arruinando meus negócios!"
+    narrador "Você aceita a sopa, mas diz que não pode pagar. Quando o estalajadeiro pergunta o que alguém faz sem dinheiro em um lugar como aquele, você fala sobre sua caça ao dragão que ameaça a vila de Mornard."
+    narrador "- Um guerreiro de Hedryl! - espanta-se o pequeno Stew. - Não se preocupe com o dinheiro, nobre herói. Será uma honra ajudá-lo em sua missão sagrada, especialmente se puder livrar Mornard daquele monstro ganancioso. Ele está arruinando meus negócios!"
     narrador "Stew revela que o dragão instalou-se na vila recentemente, passando a tomar dinheiro dos habitantes. Agora, contudo, parecia ter se cansado da simples extorsão e massacrava sem piedade."
-    narrador "você agradece a Stew pelas informações e pela lauta refeição que ele prepara. Quando termina de comer e vai para seu quarto, enontra a raparigaque servi-lhe a sopa: ela esta preparando seu banho, derramando um balde de água quente em uma bacia."
+    narrador "Você agradece a Stew pelas informações e pela lauta refeição que ele prepara. Quando termina de comer e vai para seu quarto, encontra a rapariga que serviu-lhe a sopa: ela está preparando seu banho, derramando um balde de água quente em uma bacia."
     nvl clear
     narrador "- Precisa estar descansado para a batalha que virá, senhor - diz ela, com os olhos baixos. - Se me permitir essa honra, gostaria de banhá-lo e aquecê-lo durante a noite."
-    narrador "você tenta convencer a jovem de que não e digno de tanta dedicação, que está meramente cumprindo seu dever sagrado - mas, depois de alguma conversa, descobre que os pais dela viviam em Mornard e foram mortos pelo monstro. Ela deseja intensamente fazer qualquer coisa para claborar com a morte da fera."
+    narrador "Você tenta convencer a jovem de que não é digno de tanta dedicação, que está meramente cumprindo seu dever sagrado - mas, depois de alguma conversa, descobre que os pais dela viviam em Mornard e foram mortos pelo monstro. Ela deseja intensamente fazer qualquer coisa para colaborar com a morte da fera."
     narrador "Concluindo que não seria justo negar esse desejo à jovem, você concorda. Ela te banha e você adormece, na manhã seguinte você é um guerreiro revigorado, disposto a matar mil dragões."
     narrador "A vila de Mornard está logo adiante."
     menu:
@@ -179,7 +179,7 @@ label no_23:
 
 label no_24:
     nvl clear
-    narrador "Você saca quatro moedas da olsa e entrega ao estalajadeiro, que retira-se com um sorriso. Pouco depois, a rapariga retorna com vinho e um grade pedaço de carne de javali. você^come até farta-se (pedindo perdão aos deuses pela gula, claro) e retira-separa seu quarto, onde encontra uma bacia de água quente ppara seu banho. Limpo e alimentado, você faz suas orações e desaba na cama, entregue aos deuses dos sonhos."
+    narrador "Você saca quatro moedas da bolsa e entrega ao estalajadeiro, que retira-se com um sorriso. Pouco depois, a rapariga retorna com vinho e um grande pedaço de carne de javali. Você come até fartar-se (pedindo perdão aos deuses pela gula, claro) e retira-se para seu quarto, onde encontra uma bacia de água quente para seu banho. Limpo e alimentado, você faz suas orações e desaba na cama, entregue aos deuses dos sonhos."
     narrador "Pela manhã você abandona a estalagem e coloca-se a caminho de Mornard."
     menu:
         "Continuar":
