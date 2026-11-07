@@ -7,3 +7,8 @@ define menu = nvl_menu
 # O template de GUI fixa cada parágrafo NVL em 115 px; parágrafos longos transbordam e se sobrepõem.
 # None = altura automática. (gui.rpy usa `init offset = -2`, então este define vence.)
 define gui.nvl_height = None
+
+# O painel NVL do template (gui/nvl.png) é quase opaco e esconde o cenário.
+# Um painel escuro translúcido mantém o texto legível e deixa a imagem aparecer.
+style nvl_window:
+    background Solid("#000000a0")

@@ -25,7 +25,7 @@ node tools/convert.js tools/source/adventure.js game --force
 
 `--force` **apaga qualquer edição manual** nesses três arquivos. Sem `--force`, o conversor recusa.
 
-**Atenção:** o texto já foi revisado à mão (ver `docs/correcoes-de-texto.md`). Gerar de novo com
+**Atenção:** os scripts já têm texto revisado e cenários inseridos à mão/ferramenta. O texto já foi revisado à mão (ver `docs/correcoes-de-texto.md`). Gerar de novo com
 `--force` traz de volta o texto original, com os erros de digitação.
 
 ## Integrar com o Ren'Py (8.x)
@@ -49,6 +49,19 @@ parte do jogo: copie para `game/` de um projeto de teste, rode e remova antes de
 ```
 
 No Linux sem tela, prefixe com `xvfb-run -a`. Resultados e medidas em `docs/notas-de-build.md`.
+
+## Cenários (imagens)
+
+Cada nó já mostra o seu cenário (`scene bg_...`); ver a tabela nó a nó em `tools/lib/scenes.js` e os
+prompts em `docs/guia-de-arte.md`. Enquanto não há imagem, aparece uma **cor lisa com o nome do
+cenário** (`game/cenarios.rpy`).
+
+**Para colocar uma imagem:** salve em `game/images/` com o nome exato do cenário (`bg_estrada.jpg`,
+1280x720; também vale png ou webp) e pronto: o provisório some sozinho. Sem mexer em código.
+
+Os `scene` foram inseridos nos `.rpy` uma única vez (`node tools/add-scenes.js game/script`, que
+recusa rodar de novo). Para trocar o cenário de um nó, edite o `.rpy` à mão. O painel de texto NVL é
+translúcido (`characters.rpy`) para a imagem aparecer atrás.
 
 ## Mecânica
 

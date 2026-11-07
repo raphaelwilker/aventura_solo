@@ -28,3 +28,8 @@ test('characters.rpy deixa a altura de cada parágrafo NVL automática (o templa
   const c = fs.readFileSync(path.join(GAME, 'characters.rpy'), 'utf8');
   assert.match(c, /^define gui\.nvl_height = None$/m);
 });
+
+test('characters.rpy troca o painel NVL (quase opaco no template) por um translúcido, para a imagem do cenário aparecer', () => {
+  const c = fs.readFileSync(path.join(GAME, 'characters.rpy'), 'utf8');
+  assert.match(c, /^style nvl_window:\n    background Solid\("#000000a0"\)$/m);
+});

@@ -2,6 +2,7 @@
 
 label no_25:
     nvl clear
+    scene bg_mornard with dissolve
     narrador "A vila de Mornard surge ao longe, e mesmo a essa distância visão é terrível: montes de destroços enegrecidos onde deveria haver casas, e pessoas mortas e feridas por toda parte."
     narrador "- Quem fez isto? - você pergunta, revoltado, a uma jovem que tenta confortar um rapaz gravemente queimado."
     narrador "- Onde está o responsável por este massacre insano? Mostre-me, e levarei a justiça de Hedryl até esse monstro!"
@@ -16,6 +17,7 @@ label no_25:
 
 label no_26:
     nvl clear
+    scene bg_mornard with dissolve
     narrador "O valente rapaz está morrendo porque salvou a garota, e Hedryl não aprovaria sua morte. Você ajoelha-se ao seu lado, retira as manoplas metálicas e começa o ritual de cura: uma luz suave é irradiada de suas mãos, curando magicamente as queimaduras. Marcas horríveis permanecem na pele do rapaz, mas ele vai viver."
     narrador "Você usa o que resta de seus poderes para confortar os feridos mais graves. Quando termina de curar um ancião moribundo, seu neto enxuga as lágrimas e diz que conhece uma entrada secreta para o templo."
     narrador "- Desenhe um mapa - você diz, entregando a ele pena e pergaminho."
@@ -28,6 +30,7 @@ label no_26:
 
 label no_27:
     nvl clear
+    scene bg_mornard with dissolve
     narrador "Os feridos são muitos, e mesmo seus poderes divinos de cura talvez não sejam o bastante. Além disso, pode precisar deles se for ferido pelo dragão. Você se esforça para ignorar os lamentos das pessoas queimadas e deixa a vila, rumando para o templo."
     menu:
         "Continuar...":
@@ -35,7 +38,10 @@ label no_27:
 
 label no_28:
     nvl clear
+    scene bg_colina_templo with dissolve
     narrador "Caminhando até a colina, você logo encontra a construção arruinada - antiga igreja de algum culto esquecido. Você faz uma rápida oração aos deuses locais, pedindo permissão para pisar em seu solo sagrado - e avança pelo pórtico frontal."
+    nvl clear
+    scene bg_templo_interior with dissolve
     narrador "Lá dentro, na imensidão do templo, uma forma escamosa enrosca-se à volta de um punhado de moedas e jóias. O dragão vermelho olha zombeteiro para o cavaleiro que se aproxima."
     narrador "- Ousa invadir meu santuário, pobre humano? Acredita que sua espada de brinquedo poderá vencer-me? Venha, e lhe darei a morte que os tolos merecem."
     nvl clear
@@ -47,7 +53,10 @@ label no_28:
 
 label no_29:
     nvl clear
+    scene bg_templo_corredor with dissolve
     narrador "Aproximando-se da colina, você vê as ruínas do templo. O mapa do garoto leva você a uma entrada lateral, escavada pelo tempo. Depois de alguns minutos percorrendo corredores escuros e úmidos, você alcança o salão principal."
+    nvl clear
+    scene bg_templo_interior with dissolve
     narrador "Lá dentro, na imensidão do templo, uma forma escamosa enrosca-se à volta de um punhado de moedas e jóias. O dragão não viu você: sua cabeça está voltada para a entrada, na direção oposta. Se tivesse entrado pela frente, jamais poderia surpreendê-lo."
     nvl clear
     narrador "Você aproxima-se sorrateiro e, no último momento, um brado de guerra explode em sua garganta - enquanto a Espada Sagrada penetra fundo no ombro do dragão, inutilizando sua pata esquerda. A fera vira-se para lutar, mas a pata quebrada não permite que se mova rapidamente, e você consegue aproveitar sua posição privilegiada para aplicar mais golpes. Em poucos momentos, todo o flanco esquerdo do dragão está destruído. Seu coração pulsante é visível através da carne rasgada. Uma última estocada coloca fim à vida do demônio. Você venceu."
@@ -57,8 +66,11 @@ label no_29:
 
 label no_30:
     nvl clear
+    scene bg_templo_interior with dissolve
     narrador "O dragão tomba sem vida. Não irá mais molestar inocentes, não irá mais aterrorizar aldeões indefesos."
     narrador "Um grande mal foi vencido, e o preço a pagar foi muito pequeno: apenas sua vida."
+    nvl clear
+    scene bg_final_ceu with dissolve
     narrador "Na terra, sua coragem nunca será esquecida. A vila de Mornard prestará homenagens a seu salvador para sempre, os bardos cantarão suas batalhas pelo reino. E, no céu Hedryl estará esperando por seu mais valoroso guerreiro..."
     narrador "Fim."
     narrador "História publicada na revista Dragão Brasil Ano 1 número 12 pela Editora Trama."
@@ -67,6 +79,7 @@ label no_30:
 
 label no_31:
     nvl clear
+    scene bg_final_vila with dissolve
     narrador "Tendo matado sozinho um enorme dragão vermelho, coisa que os mais valentes guerreiros não conseguiram ou se recusaram fazer, você é aclamado como herói. O seu nome será uma lenda entre os cavaleiros da ordem de Hedryl, e você sempre encontrará amigos na vila de Mornard - bem como em qualquer lugar onde os bardos cantem sua bravura. Parabéns, você conseguiu!"
     narrador "Fim."
     narrador "História publicada na revista Dragão Brasil Ano 1 número 12 pela Editora Trama."

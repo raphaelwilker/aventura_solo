@@ -51,3 +51,13 @@ tela de menu (`nvl`, não `choice`), então os testes esperam pelo texto da opç
 
 **Os tamanhos de build da seção 4 foram medidos antes do NVL** (o jogo em si muda pouco; o peso é o
 motor). Reexportar para confirmar.
+
+## 6. Cenários provisórios e painel NVL
+Cada nó mostra seu cenário (`scene ... with dissolve`); 21 cenários, com fundo provisório (cor lisa e
+o nome) até existir a imagem em `game/images/`. Verificado no Ren'Py 8.5.3: lint limpo, 3 playthroughs
+passando, troca de cenário no meio do nó (ex.: nó 22, estalagem para quarto).
+
+Achado: o painel NVL do template (`gui/nvl.png`) é quase opaco e escondia o cenário; trocado por um
+painel translúcido (`#000000a0`). Testado com uma imagem clara e movimentada (de teste, não do jogo):
+imagem visível e texto legível. As opções do menu (cinza) ficam um pouco apagadas sobre fundos muito
+claros; ajustar a cor do botão se incomodar quando houver arte final.
