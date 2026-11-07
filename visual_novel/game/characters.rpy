@@ -12,3 +12,8 @@ define gui.nvl_height = None
 # Um painel escuro translúcido mantém o texto legível e deixa a imagem aparecer.
 style nvl_window:
     background Solid("#000000a0")
+
+# O cinza do template deixa as opções do menu apagadas sobre a imagem do cenário.
+style nvl_button_text:
+    idle_color "#f0f0f0"
+    hover_color "#ffd479"

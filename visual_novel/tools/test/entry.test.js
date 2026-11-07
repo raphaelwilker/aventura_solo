@@ -33,3 +33,8 @@ test('characters.rpy troca o painel NVL (quase opaco no template) por um transl�
   const c = fs.readFileSync(path.join(GAME, 'characters.rpy'), 'utf8');
   assert.match(c, /^style nvl_window:\n    background Solid\("#000000a0"\)$/m);
 });
+
+test('characters.rpy deixa as opções do menu NVL claras e com destaque (o cinza do template some sobre a arte)', () => {
+  const c = fs.readFileSync(path.join(GAME, 'characters.rpy'), 'utf8');
+  assert.match(c, /^style nvl_button_text:\n    idle_color "#f0f0f0"\n    hover_color "#ffd479"$/m);
+});

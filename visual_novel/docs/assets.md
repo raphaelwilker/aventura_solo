@@ -12,11 +12,11 @@ comercial é permitido. Depois mude o status para `pronto`. O prompt de cada cen
 
 | Status | Arquivo | Tipo | Fonte | Licença | Uso comercial | Ferramenta / data | Onde é usado (nós) |
 |---|---|---|---|---|---|---|---|
-| pendente | `bg_estrada.jpg` | bg | a gerar | a definir | a confirmar | a definir | 0, 7 (Estrada de terra) |
-| pendente | `bg_encruzilhada.jpg` | bg | a gerar | a definir | a confirmar | a definir | 3, 5, 6, 7, 8 (Estrada que se bifurca) |
-| pendente | `bg_pantano_margem.jpg` | bg | a gerar | a definir | a confirmar | a definir | 0, 1 (Margem do pântano) |
-| pendente | `bg_pantano_dentro.jpg` | bg | a gerar | a definir | a confirmar | a definir | 2, 5, 6 (Interior do pântano) |
-| pendente | `bg_montanha_distante.jpg` | bg | a gerar | a definir | a confirmar | a definir | 7, 9, 10 (Montanha ao longe) |
+| pronto | `bg_estrada.jpg` | bg | gerada por IA (Superdesign) | conforme os termos do Superdesign e do modelo Seedream 5 Lite (ByteDance): **a confirmar** | **a confirmar** | Superdesign, modelo `bytedance/seedream-5.0-lite`, 2026-11-07; prompt base + cena do `guia-de-arte.md`, 16:9 2K, reduzida para 1280x720 | 0, 7 (Estrada de terra) |
+| pronto | `bg_encruzilhada.jpg` | bg | gerada por IA (Superdesign) | conforme os termos do Superdesign e do modelo Seedream 5 Lite (ByteDance): **a confirmar** | **a confirmar** | Superdesign, modelo `bytedance/seedream-5.0-lite`, 2026-11-07; prompt base + cena do `guia-de-arte.md`, 16:9 2K, reduzida para 1280x720 | 3, 5, 6, 7, 8 (Estrada que se bifurca) |
+| pronto | `bg_pantano_margem.jpg` | bg | gerada por IA (Superdesign) | conforme os termos do Superdesign e do modelo Seedream 5 Lite (ByteDance): **a confirmar** | **a confirmar** | Superdesign, modelo `bytedance/seedream-5.0-lite`, 2026-11-07; prompt base + cena do `guia-de-arte.md`, 16:9 2K, reduzida para 1280x720 | 0, 1 (Margem do pântano) |
+| pronto | `bg_pantano_dentro.jpg` | bg | gerada por IA (Superdesign) | conforme os termos do Superdesign e do modelo Seedream 5 Lite (ByteDance): **a confirmar** | **a confirmar** | Superdesign, modelo `bytedance/seedream-5.0-lite`, 2026-11-07; prompt base + cena do `guia-de-arte.md`, 16:9 2K, reduzida para 1280x720 | 2, 5, 6 (Interior do pântano) |
+| pronto | `bg_montanha_distante.jpg` | bg | gerada por IA (Superdesign) | conforme os termos do Superdesign e do modelo Seedream 5 Lite (ByteDance): **a confirmar** | **a confirmar** | Superdesign, modelo `bytedance/seedream-5.0-lite`, 2026-11-07; prompt base + cena do `guia-de-arte.md`, 16:9 2K, reduzida para 1280x720 | 7, 9, 10 (Montanha ao longe) |
 | pendente | `bg_trilha_montanha.jpg` | bg | a gerar | a definir | a confirmar | a definir | 9 (Trilha entre rochas) |
 | pendente | `bg_desmoronamento.jpg` | bg | a gerar | a definir | a confirmar | a definir | 9, 11, 14, 19 (Penhasco e escalada) |
 | pendente | `bg_desfiladeiro.jpg` | bg | a gerar | a definir | a confirmar | a definir | 8 (Desfiladeiro) |
