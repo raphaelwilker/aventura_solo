@@ -60,8 +60,10 @@ retornam ao nó 0.
 - Cada nó vira um `label` Ren'Py (`no_00` … `no_31`), cada `options` vira um `menu` e cada `goto`
   um `jump`. Manter o `id` do JSON no nome do label para rastrear o original.
 - Os nós de fim de jogo mostram o texto e oferecem recomeçar (`jump no_00`), como no JSON.
-- Nós quase idênticos (20 e 21; 22 e 23) são mantidos separados na v1 para preservar a
-  fidelidade; unificá-los é decisão posterior.
+- Problemas conhecidos do JSON são mantidos na v1 (teste de fidelidade) e corrigidos na reescrita
+  posterior: nós 20 e 21 são idênticos (afogamento), e a opção "Falar que não tem dinheiro" do
+  nó 17 aponta para o 21 (afogamento no rio) em vez do 23 (estalagem). Os nós 22 e 23 **não** são
+  duplicados: são dois desfechos diferentes (a ajuda de Stew e a recusa).
 - Um conversor (script Node) lê o `adventure.js` e gera os `.rpy` do esqueleto: labels, textos
   limpos de HTML e menus. Revisão manual depois (o texto tem erros de digitação a corrigir).
 - Os 32 nós são agrupados em capítulos pelo arco da história (pântano e viagem; desfiladeiro e
@@ -125,4 +127,5 @@ iOS, sistema RPG (dados, ficha, combate), tradução para outros idiomas, dublag
 - Permissão de publicação junto aos autores/editora (ou reescrita), antes de lançar publicamente.
 - Divisão exata dos 32 nós em capítulos e nomes dos personagens (o JSON usa "você", o viajante,
   o jangadeiro, o estalajadeiro, o rapaz ferido e o dragão), a definir ao gerar o esqueleto.
-- Se unificar os nós quase duplicados (20/21, 22/23) depois da v1.
+- Reescrita posterior: corrigir os problemas do JSON (nós 20/21 duplicados, link 17→21, erros de
+  digitação) quando o texto for reescrito.
