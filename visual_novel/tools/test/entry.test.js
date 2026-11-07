@@ -16,3 +16,15 @@ test('state.rpy declara "default ferido_pescoco = False"', () => {
   const state = fs.readFileSync(path.join(GAME, 'state.rpy'), 'utf8');
   assert.match(state, /^default ferido_pescoco = False$/m);
 });
+
+test('characters.rpy define o narrador em modo NVL e menus no modo NVL', () => {
+  const c = fs.readFileSync(path.join(GAME, 'characters.rpy'), 'utf8');
+  assert.match(c, /^define narrador = Character\(None, kind=nvl\)$/m);
+  assert.match(c, /^define config\.narrator_menu = True$/m);
+  assert.match(c, /^define menu = nvl_menu$/m); // sem isso o texto some quando o menu aparece
+});
+
+test('characters.rpy deixa a altura de cada parágrafo NVL automática (o template fixa em 115 e o texto longo se sobrepõe)', () => {
+  const c = fs.readFileSync(path.join(GAME, 'characters.rpy'), 'utf8');
+  assert.match(c, /^define gui\.nvl_height = None$/m);
+});

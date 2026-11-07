@@ -31,8 +31,23 @@ arquivos de `visual_novel/game/` por cima, mais `visual_novel/tests/playthrough.
   - Peso fixo do motor (~35 MB) domina; o jogo em si é pequeno (4,6 MB). Em celular com rede lenta o primeiro carregamento será o ponto fraco. **Não testado em celular.**
 - [ ] Android: não tentado (exige JDK e Android SDK).
 
-## 5. Problema encontrado: texto estoura a caixa de diálogo
-No navegador, o primeiro parágrafo do jogo (~280 caracteres) ultrapassa a caixa de diálogo padrão: a última linha é cortada e se sobrepõe ao menu inferior (print em 1280x720).
-- Medição: mediana de 205 caracteres por parágrafo; **56 dos 108 parágrafos passam de 200** caracteres, 21 passam de 300, o maior tem 535 (nó 29).
-- Isso é esperado para um livro-jogo: os parágrafos foram escritos para ler em página, não em caixa de 3 linhas.
-- Opções (decisão do autor): (a) modo NVL do Ren'Py, em que o texto ocupa a tela como numa light novel (combina com o objetivo do projeto); (b) aumentar a caixa (`gui.textbox_height`) e reduzir a fonte; (c) quebrar os parágrafos longos na reescrita.
+## 5. Texto longo: resolvido com o modo NVL
+No navegador, o primeiro parágrafo (~280 caracteres) ultrapassava a caixa de diálogo padrão, e 56 dos
+108 parágrafos passam de 200 caracteres (mediana 205, maior 535). Adotado o modo NVL do Ren'Py
+(texto ocupando a tela, como numa light novel):
+- o emissor escreve `narrador "..."` com `nvl clear` no início de cada nó e quando uma página passaria
+  de 900 caracteres (`NVL_PAGE_CHARS`);
+- `game/characters.rpy` define o narrador NVL, `menu = nvl_menu` e `gui.nvl_height = None`.
+
+Dois defeitos apareceram só ao jogar de verdade e foram corrigidos com teste:
+1. Sem `menu = nvl_menu` o texto **sumia** quando o menu aparecia (só as opções ficavam na tela).
+2. O template de GUI fixa cada parágrafo NVL em 115 px (`gui.nvl_height`); parágrafos longos se
+   **sobrepunham** (visto no nó 22). Com `None` a altura é automática.
+
+Conferido por screenshots no Ren'Py, iniciando com `Start()` como um jogador (e não com `Jump`, que
+deixa o menu principal ao fundo e dá screenshots enganosos): nó 0 (2ª página + opções) e nó 22 (maior
+texto, última página + "Continuar"). Lint e os 3 playthroughs continuam passando. O NVL muda o nome da
+tela de menu (`nvl`, não `choice`), então os testes esperam pelo texto da opção.
+
+**Os tamanhos de build da seção 4 foram medidos antes do NVL** (o jogo em si muda pouco; o peso é o
+motor). Reexportar para confirmar.

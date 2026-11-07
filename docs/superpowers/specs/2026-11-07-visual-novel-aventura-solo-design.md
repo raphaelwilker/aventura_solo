@@ -41,7 +41,7 @@ Projeto Ren'Py novo, em repositório separado do `aventura_solo` (que fica como 
 ```
 game/
   script/        # um .rpy por capítulo: cap01.rpy, cap02.rpy, ...; start.rpy
-  characters.rpy # personagens, cores, nomes (criado quando houver falas atribuídas; a v1 só tem narrador)
+  characters.rpy # narrador em modo NVL e ajustes de NVL (personagens falantes entram aqui quando houver)
   state.rpy      # flags de decisão e afinidade
   screens.rpy    # customização de interface
   images/        # bg/, sprites/, cg/
@@ -86,6 +86,11 @@ anterior. Testes de atributo podem ser adicionados depois com o Python embutido,
 estrutura.
 
 ## 6. Interface
+
+O texto usa o **modo NVL** do Ren'Py (o texto ocupa a tela, como numa light novel): os parágrafos
+do livro-jogo são longos (mediana de 205 caracteres) e não cabem na caixa de diálogo padrão. O
+emissor abre uma nova página (`nvl clear`) a cada nó e quando a página passaria de 900
+caracteres; as escolhas aparecem junto do texto (`menu = nvl_menu`).
 
 Tela de título, menu de pausa, galeria de CGs, histórico, configurações e save/load (a maior parte
 já vem no Ren'Py). Um tema visual único (cores, fonte, moldura da caixa de texto) para fugir da
