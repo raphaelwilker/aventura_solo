@@ -104,3 +104,12 @@ visível por cima. O modo NVL (seção 5) foi substituído pelo **ADV**:
   explícito de 60 s) e capturas de tela com a estrada de verdade atrás da caixa.
 - Quando as escolhas aparecem, a última fala some (comportamento padrão do ADV) e as opções ficam no centro, em barras
   escuras. Se o autor quiser a fala visível junto das escolhas, é um ajuste à parte.
+
+## 10. Tela inicial
+`game/tela_inicial.rpy` substitui o `main_menu` do template: ilustração de abertura (`bg_titulo`) em tela cheia, degradê
+escuro no lado do menu (`titulo_degrade`), título e subtítulo à esquerda e menu vertical em português (Iniciar,
+Continuar, Opções, Sobre e Sair, este só no computador). O título fica em duas linhas no topo do arquivo
+(`titulo_jogo`, `subtitulo_jogo`): é o único lugar a editar para trocá-lo. Decisão do autor: **só a tela inicial em
+português**; o resto da interface (menu rápido, Preferências, Salvar, Carregar, Sobre) continua em inglês por enquanto.
+Verificado no Ren'Py 8.5.3: lint sem erros (a tela do template é substituída sem conflito) e captura da tela.
+O lint lista avisos "already defined" para valores de `gui.*` que `characters.rpy` sobrepõe de propósito.

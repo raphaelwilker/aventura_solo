@@ -34,6 +34,9 @@ comercial é permitido. Depois mude o status para `pronto`. O prompt de cada cen
 | pendente | `bg_final_ceu.jpg` | bg | a gerar | a definir | a confirmar | a definir | 30 (Céu / além) |
 | pendente | `bg_final_vila.jpg` | bg | a gerar | a definir | a confirmar | a definir | 31 (Vila em festa) |
 
+| pronto | `bg_titulo.jpg` | ilustração de abertura | gerada por IA (Superdesign) | conforme os termos do Superdesign e do modelo Seedream 5 Lite (ByteDance): **a confirmar** | **a confirmar** | Superdesign, modelo `bytedance/seedream-5.0-lite`, 2026-11-08; dragão vermelho sobre o templo em ruínas ao pôr do sol, lado esquerdo vazio para o menu; 16:9 2K reduzida para 1280x720 | tela inicial |
+| pronto | `titulo_degrade.png` | degradê | gerado por código (Python/Pillow), não é IA | sem restrições (feito pelo projeto) | sim | script local, 2026-11-08 | tela inicial (escurece o lado do menu) |
+
 ## Personagens, itens e áudio
 Fase 2: ainda não listados aqui. Ver `lista-de-cenas.md` (seções 2 a 4). Adicionar linhas quando
 forem produzidos.
