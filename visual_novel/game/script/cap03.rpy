@@ -82,6 +82,7 @@ label no_30:
     narrador "Fim."
     narrador "História publicada na revista Dragão Brasil Ano 1 número 12 pela Editora Trama."
     narrador "História de Andreas McCullosh & Paladino."
+    narrador "Música: Dedication Day e Homecoming, de Tabletop Audio - https://tabletopaudio.com/"
     return
 
 label no_31:
@@ -92,4 +93,5 @@ label no_31:
     narrador "Fim."
     narrador "História publicada na revista Dragão Brasil Ano 1 número 12 pela Editora Trama."
     narrador "História de Andreas McCullosh & Paladino."
+    narrador "Música: Dedication Day e Homecoming, de Tabletop Audio - https://tabletopaudio.com/"
     return

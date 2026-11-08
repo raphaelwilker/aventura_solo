@@ -2,6 +2,7 @@
 // (também vale opus, mp3, flac ou wav). Sem o arquivo, o jogo fica em silêncio naquele ponto.
 const TRACKS = {
   mus_titulo: 'Tela inicial',
+  mus_inicio: 'Começo da história (nó 0): a volta para casa e o encontro com o viajante',
   mus_viagem: 'Viagem: estradas, encruzilhada, montanha, trilhas e vales',
   mus_pantano: 'Pântano da Agonia: tensão, perigo à espreita',
   mus_perigo: 'Ameaça e combate: mortos-vivos, assalto no rio',
@@ -16,7 +17,7 @@ const TRACKS = {
 // Por nó: a faixa vale a partir do cenário `scene` do nó (0 = desde o início; 1 = a partir da 2ª mudança de cenário).
 const m = (track, scene = 0) => ({ track, scene });
 const MUSIC = {
-  0: [m('mus_viagem')],
+  0: [m('mus_inicio')],
   1: [m('mus_pantano')],
   2: [m('mus_pantano')],
   3: [m('mus_pantano'), m('mus_viagem', 1)],

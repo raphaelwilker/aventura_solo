@@ -3,7 +3,7 @@
 label no_00:
     $ ferido_pescoco = False
     scene bg_estrada with dissolve
-    $ tocar_musica("mus_viagem")
+    $ tocar_musica("mus_inicio")
     narrador "As comemorações terminaram e você está a caminho de casa, em uma vila próxima, quando ocorre um encontro inesperado; um viajante está caído à beira da estrada."
     narrador "Suas roupas estão sujas e rasgadas, embora pareçam ter sido de luxuosas outrora. E ele está sendo cruelmente espancado por um bando de ladrões. Cinco deles."
     narrador "Quantidade pequena demais para fazer frente a um guerreiro de Hedryl."

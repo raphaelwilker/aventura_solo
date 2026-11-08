@@ -124,5 +124,20 @@ Pendente: receber os arquivos e registrar fonte e licença em `assets.md`.
 ## 12. Lição: "Continuar" ambíguo e teste
 O botão "Continuar" da tela inicial (que abre a tela de carregar) coincidia com o rótulo "Continuar" de escolhas dos nós; como o menu
 principal continua desenhado por trás nos testes, `click "Continuar"` acertava o botão errado e o playthrough travava. Renomeado
-para **"Carregar"** (descreve melhor o que faz). Detalhe do roteiro de teste: o playthrough agora entra pelo "Iniciar"
-(`before testsuite`), como o jogador. Não tinha rodado os playthroughs desde a tela inicial; passei a rodar a cada mudança.
+para **"Carregar"** (descreve melhor o que faz), e isso resolveu. Nota: tentei também um `before testsuite: run Start()` no
+playthrough, mas ele não faz efeito (o menu continua por trás) e foi removido; o `Start()` só funciona dentro de um caso de
+teste, uma vez por execução. Não tinha rodado os playthroughs desde a tela inicial; passei a rodar a cada mudança.
+
+## 13. Primeira música e créditos
+`game/audio/mus_titulo.mp3` = "Dedication Day", de **Tabletop Audio** (https://tabletopaudio.com/; autoria e fonte vêm das etiquetas ID3 do
+arquivo), enviada pelo autor: 10 minutos, 13,75 MB, 192 kbps, sem corrupção (`ffmpeg` decodifica sem erros). Toca na tela inicial e some
+com fade ao iniciar o jogo (ainda não há música de viagem). Os dois finais (nós 30 e 31) mostram, depois dos créditos da história, a linha
+"Música: Dedication Day e Homecoming, de Tabletop Audio - https://tabletopaudio.com/". **Licença e uso comercial a confirmar** com o Tabletop Audio.
+O arquivo é grande: se pesar no APK, dá para converter para `.ogg` (cerca de 40% menor).
+
+## 14. Segunda música: começo da história
+`game/audio/mus_inicio.mp3` = "Homecoming", também de Tabletop Audio (10 min, 13,77 MB, 192 kbps, íntegra). Nova faixa `mus_inicio`,
+só no nó 0 (a volta para casa e o encontro com o viajante); a música de viagem (`mus_viagem`) continua reservada para os trechos seguintes.
+Interpretação do autor ("começo da história") a confirmar: se for para ser a música de viagem em geral, é só renomear o arquivo para
+`mus_viagem.mp3`. Verificado no Ren'Py: a música do menu toca, `mus_inicio` entra ao iniciar e some com fade no nó seguinte (sem música ainda).
+As duas faixas somam 27,5 MB; se pesar no APK, converter para `.ogg`.

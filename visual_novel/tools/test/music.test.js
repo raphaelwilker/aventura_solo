@@ -20,8 +20,8 @@ const SAMPLE = [
   '',
 ].join('\n');
 
-test('são 10 faixas, com IDs mus_*', () => {
-  assert.strictEqual(Object.keys(TRACKS).length, 10);
+test('são 11 faixas, com IDs mus_*', () => {
+  assert.strictEqual(Object.keys(TRACKS).length, 11);
   for (const id of Object.keys(TRACKS)) assert.match(id, /^mus_[a-z_]+$/);
 });
 
@@ -30,7 +30,7 @@ test('MUSIC cobre os 32 nós; a 1ª faixa de cada nó vale desde o cenário 0', 
   for (const list of Object.values(MUSIC)) assert.strictEqual(list[0].scene, 0);
 });
 
-test('toda faixa usada nos nós existe em TRACKS, e todas as 9 (menos a da tela inicial) são usadas', () => {
+test('toda faixa usada nos nós existe em TRACKS, e todas as 10 (menos a da tela inicial) são usadas', () => {
   const usadas = new Set(Object.values(MUSIC).flat().map((m) => m.track));
   for (const t of usadas) assert.ok(TRACKS[t], `faixa desconhecida: ${t}`);
   assert.deepStrictEqual([...usadas].sort(), Object.keys(TRACKS).filter((t) => t !== 'mus_titulo').sort());
@@ -96,4 +96,37 @@ test('musica.rpy: função tocar_musica silenciosa sem arquivo, música da tela 
   assert.match(m, /renpy\.music\.stop\(channel="music", fadeout=1\.5\)/);
   assert.match(m, /config\.main_menu_music = /);
   for (const ext of ['ogg', 'opus', 'mp3', 'flac', 'wav']) assert.ok(m.includes(`"${ext}"`), `falta ${ext}`);
+});
+
+test('a música da tela inicial (mus_titulo) está em game/audio/, com uma extensão aceita e não vazia', () => {
+  const dir = path.join(GAME, 'audio');
+  const achados = ['ogg', 'opus', 'mp3', 'flac', 'wav'].map((e) => path.join(dir, `mus_titulo.${e}`)).filter((f) => fs.existsSync(f));
+  assert.strictEqual(achados.length, 1, 'deve haver exatamente um arquivo mus_titulo.*');
+  assert.ok(fs.statSync(achados[0]).size > 100000, 'arquivo muito pequeno');
+});
+
+test('os dois finais creditam as músicas (Dedication Day e Homecoming, Tabletop Audio, com o link) logo depois dos créditos da história', () => {
+  const cap03 = fs.readFileSync(path.join(GAME_SCRIPT, 'cap03.rpy'), 'utf8');
+  for (const no of ['no_30', 'no_31']) {
+    const ini = cap03.indexOf(`label ${no}:`);
+    const prox = cap03.indexOf('label no_', ini + 5);
+    const bloco = cap03.slice(ini, prox < 0 ? undefined : prox).split('\n').filter((l) => /^\s+narrador "/.test(l));
+    const i = bloco.findIndex((l) => l.includes('História de Andreas McCullosh & Paladino.'));
+    assert.ok(i > -1, `${no}: faltam os créditos da história`);
+    assert.strictEqual(
+      bloco[i + 1],
+      '    narrador "Música: Dedication Day e Homecoming, de Tabletop Audio - https://tabletopaudio.com/"',
+      `${no}: o crédito da música deve vir logo depois dos créditos da história`,
+    );
+  }
+});
+
+test('a música do começo da história (mus_inicio) toca só no nó 0 e está em game/audio/', () => {
+  assert.ok(TRACKS.mus_inicio);
+  const nos = Object.entries(MUSIC).filter(([, l]) => l.some((m) => m.track === 'mus_inicio')).map(([id]) => Number(id));
+  assert.deepStrictEqual(nos, [0]);
+  const dir = path.join(GAME, 'audio');
+  const achados = ['ogg', 'opus', 'mp3', 'flac', 'wav'].map((e) => path.join(dir, `mus_inicio.${e}`)).filter((f) => fs.existsSync(f));
+  assert.strictEqual(achados.length, 1, 'deve haver exatamente um arquivo mus_inicio.*');
+  assert.ok(fs.statSync(achados[0]).size > 100000);
 });
