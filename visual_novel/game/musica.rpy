@@ -15,7 +15,8 @@ init python:
 
     def tocar_musica(faixa):
         # Mesma faixa em nós seguidos continua tocando, sem reiniciar.
-        if store.musica_atual == faixa:
+        # getattr: tolera a variável ausente (salto direto para um nó, sem passar pelo início do jogo).
+        if getattr(store, "musica_atual", None) == faixa:
             return
         store.musica_atual = faixa
         arquivo = arquivo_de_musica(faixa)

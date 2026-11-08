@@ -108,7 +108,7 @@ visível por cima. O modo NVL (seção 5) foi substituído pelo **ADV**:
 ## 10. Tela inicial
 `game/tela_inicial.rpy` substitui o `main_menu` do template: ilustração de abertura (`bg_titulo`) em tela cheia, degradê
 escuro no lado do menu (`titulo_degrade`), título e subtítulo à esquerda e menu vertical em português (Iniciar,
-Continuar, Opções, Sobre e Sair, este só no computador). O título fica em duas linhas no topo do arquivo
+Carregar, Opções, Sobre e Sair, este só no computador). O título fica em duas linhas no topo do arquivo
 (`titulo_jogo`, `subtitulo_jogo`): é o único lugar a editar para trocá-lo. Decisão do autor: **só a tela inicial em
 português**; o resto da interface (menu rápido, Preferências, Salvar, Carregar, Sobre) continua em inglês por enquanto.
 Verificado no Ren'Py 8.5.3: lint sem erros (a tela do template é substituída sem conflito) e captura da tela.
@@ -120,3 +120,9 @@ mesma faixa não reinicia, fade de 1,5 s, música da tela inicial) e `tools/add-
 Verificado no Ren'Py 8.5.3 com tons sintéticos de teste (não incluídos no repositório): a música da tela inicial toca, a de viagem
 começa ao iniciar, troca no nó do pântano, o nó sem arquivo fica em silêncio e a de derrota toca nas mortes; lint e playthroughs passam.
 Pendente: receber os arquivos e registrar fonte e licença em `assets.md`.
+
+## 12. Lição: "Continuar" ambíguo e teste
+O botão "Continuar" da tela inicial (que abre a tela de carregar) coincidia com o rótulo "Continuar" de escolhas dos nós; como o menu
+principal continua desenhado por trás nos testes, `click "Continuar"` acertava o botão errado e o playthrough travava. Renomeado
+para **"Carregar"** (descreve melhor o que faz). Detalhe do roteiro de teste: o playthrough agora entra pelo "Iniciar"
+(`before testsuite`), como o jogador. Não tinha rodado os playthroughs desde a tela inicial; passei a rodar a cada mudança.

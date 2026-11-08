@@ -90,6 +90,7 @@ test('musica.rpy: função tocar_musica silenciosa sem arquivo, música da tela 
   const m = fs.readFileSync(path.join(GAME, 'musica.rpy'), 'utf8');
   assert.match(m, /^default musica_atual = None$/m);
   assert.match(m, /def tocar_musica\(faixa\):/);
+  assert.match(m, /getattr\(store, "musica_atual", None\) == faixa/, 'tolerar a variável ausente (salto direto para um nó, sem passar pelo início)');
   assert.match(m, /renpy\.loadable\(/);
   assert.match(m, /fadein=1\.5/);
   assert.match(m, /renpy\.music\.stop\(channel="music", fadeout=1\.5\)/);

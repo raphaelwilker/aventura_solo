@@ -8,6 +8,11 @@ init python:
 define _test.timeout = 60.0
 
 testsuite playthrough:
+    # Entra no jogo como o jogador, pelo "Iniciar" da tela inicial (saltar direto para um nó deixa a tela inicial por trás).
+    before testsuite:
+        run Start()
+        pause 1.5
+
     before testcase:
         $ visited.clear()
         run Jump("no_00")

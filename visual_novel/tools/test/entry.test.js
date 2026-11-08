@@ -40,12 +40,12 @@ test('characters.rpy deixa o menu rápido (Back, History, Skip...) branco com co
   assert.match(c, /^style quick_button_text:\n    idle_color "#ffffff"\n    hover_color "#ffd479"\n    outlines \[ \(1, "#000000c0", 0, 1\) \]$/m);
 });
 
-test('tela inicial: define o título num só lugar e o menu em português (Iniciar, Continuar, Opções, Sobre, Sair)', () => {
+test('tela inicial: define o título num só lugar e o menu em português (Iniciar, Carregar, Opções, Sobre, Sair)', () => {
   const t = fs.readFileSync(path.join(GAME, 'tela_inicial.rpy'), 'utf8');
   assert.match(t, /^define titulo_jogo = ".+"$/m);
   assert.match(t, /^define subtitulo_jogo = ".+"$/m);
   assert.match(t, /^screen main_menu\(\):$/m);
-  for (const [rotulo, acao] of [['Iniciar', 'Start\\(\\)'], ['Continuar', 'ShowMenu\\("load"\\)'], ['Opções', 'ShowMenu\\("preferences"\\)'], ['Sobre', 'ShowMenu\\("about"\\)']]) {
+  for (const [rotulo, acao] of [['Iniciar', 'Start\\(\\)'], ['Carregar', 'ShowMenu\\("load"\\)'], ['Opções', 'ShowMenu\\("preferences"\\)'], ['Sobre', 'ShowMenu\\("about"\\)']]) {
     assert.match(t, new RegExp(`textbutton "${rotulo}" action ${acao}`), `falta o botão ${rotulo}`);
   }
   assert.match(t, /renpy\.variant\("pc"\)[\s\S]*textbutton "Sair" action Quit/, 'Sair só no computador');

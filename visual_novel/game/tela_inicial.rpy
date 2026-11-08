@@ -44,7 +44,7 @@ screen main_menu():
         spacing 14
 
         textbutton "Iniciar" action Start() style "titulo_botao" text_style "titulo_botao_texto"
-        textbutton "Continuar" action ShowMenu("load") style "titulo_botao" text_style "titulo_botao_texto"
+        textbutton "Carregar" action ShowMenu("load") style "titulo_botao" text_style "titulo_botao_texto"
         textbutton "Opções" action ShowMenu("preferences") style "titulo_botao" text_style "titulo_botao_texto"
         textbutton "Sobre" action ShowMenu("about") style "titulo_botao" text_style "titulo_botao_texto"
 
