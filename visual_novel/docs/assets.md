@@ -31,11 +31,15 @@ comercial é permitido. Depois mude o status para `pronto`. O prompt de cada cen
 | pronto | `bg_colina_templo.jpg` | bg | gerada por IA (Superdesign) | conforme os termos do Superdesign e do modelo Seedream 5 Lite (ByteDance): **a confirmar** | **a confirmar** | Superdesign, modelo `bytedance/seedream-5.0-lite`, 2026-11-08; prompt base + cena do `guia-de-arte.md`, 16:9 2K, reduzida para 1280x720 | 28, 29 (Colina com ruínas do templo) |
 | pronto | `bg_templo_interior.jpg` | bg | gerada por IA (Superdesign) | conforme os termos do Superdesign e do modelo Seedream 5 Lite (ByteDance): **a confirmar** | **a confirmar** | Superdesign, modelo `bytedance/seedream-5.0-lite`, 2026-11-08; prompt base + cena do `guia-de-arte.md`, 16:9 2K, reduzida para 1280x720 | 28, 29 (Salão do templo) |
 | pronto | `bg_templo_corredor.jpg` | bg | enviada pelo autor (gerada por IA; **ferramenta a informar**) | **a confirmar** | **a confirmar** | enviada em 2026-11-08, prompt do `guia-de-arte.md`; recorte central de 11 px (1376x768 para 16:9) e redução para 1280x720 | 29 (Corredores escuros e úmidos) |
-| pendente | `bg_final_ceu.jpg` | bg | a gerar | a definir | a confirmar | a definir | 30 (Céu / além) |
-| pendente | `bg_final_vila.jpg` | bg | a gerar | a definir | a confirmar | a definir | 31 (Vila em festa) |
+| pronto | `bg_final_ceu.jpg` | bg | enviada pelo autor (gerada por IA; **ferramenta a informar**) | **a confirmar** | **a confirmar** | enviada em 2026-11-08, prompt do `guia-de-arte.md`; recorte central de 11 px e redução para 1280x720 | 30 (Céu / além) |
+| pronto | `bg_final_vila.jpg` | bg | enviada pelo autor (gerada por IA; **ferramenta a informar**) | **a confirmar** | **a confirmar** | enviada em 2026-11-08, prompt do `guia-de-arte.md`; recorte central de 11 px e redução para 1280x720 | 31 (Vila em festa) |
 
 | pronto | `bg_titulo.jpg` | ilustração de abertura | gerada por IA (Superdesign) | conforme os termos do Superdesign e do modelo Seedream 5 Lite (ByteDance): **a confirmar** | **a confirmar** | Superdesign, modelo `bytedance/seedream-5.0-lite`, 2026-11-08; dragão vermelho sobre o templo em ruínas ao pôr do sol, lado esquerdo vazio para o menu; 16:9 2K reduzida para 1280x720 | tela inicial |
 | pronto | `titulo_degrade.png` | degradê | gerado por código (Python/Pillow), não é IA | sem restrições (feito pelo projeto) | sim | script local, 2026-11-08 | tela inicial (escurece o lado do menu) |
+
+## Alternativas (fora do jogo)
+- `docs/alternativas/bg_pantano_dentro_alternativa.jpg`: outra versão do interior do pântano (tocha em primeiro plano, pôr do sol),
+  enviada pelo autor em 2026-11-08 (ferramenta a informar). Não está no jogo; para usá-la, copiar para `game/images/bg_pantano_dentro.jpg`.
 
 ## Personagens, itens e áudio
 Fase 2: ainda não listados aqui. Ver `lista-de-cenas.md` (seções 2 a 4). Adicionar linhas quando
