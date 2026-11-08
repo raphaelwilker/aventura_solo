@@ -73,6 +73,14 @@ recusa rodar de novo). Para trocar o cenário de um nó, edite o `.rpy` à mão.
 para a imagem aparecer atrás. Parágrafos longos são divididos em trechos de até 230 caracteres
 (`node tools/split-lines.js game/script`, idempotente).
 
+## Música
+
+Cada nó chama `tocar_musica("mus_...")` (código em `game/musica.rpy`); as 10 faixas e onde cada uma toca estão em
+`docs/lista-de-musicas.md`. **Para colocar uma música:** salve em `game/audio/` com o nome exato (`mus_viagem.ogg`; também vale
+opus, mp3, flac ou wav). Sem o arquivo, o jogo fica em silêncio naquele ponto, sem erro. A mesma faixa em nós seguidos não
+reinicia, e as trocas têm fade de 1,5 s. O volume de música é o da tela de Preferências. As chamadas foram inseridas uma única
+vez (`node tools/add-music.js game/script`, que recusa rodar de novo); para mudar a música de um nó, edite o `.rpy` à mão.
+
 ## Mecânica
 
 Uma flag: `ferido_pescoco`. O nó 6 a liga (o scrag agarra o herói), o nó 0 a zera (inclusive ao

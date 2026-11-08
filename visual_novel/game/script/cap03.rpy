@@ -2,6 +2,7 @@
 
 label no_25:
     scene bg_mornard with dissolve
+    $ tocar_musica("mus_mornard")
     narrador "A vila de Mornard surge ao longe, e mesmo a essa distância visão é terrível: montes de destroços enegrecidos onde deveria haver casas, e pessoas mortas e feridas por toda parte."
     narrador "- Quem fez isto? - você pergunta, revoltado, a uma jovem que tenta confortar um rapaz gravemente queimado."
     narrador "- Onde está o responsável por este massacre insano? Mostre-me, e levarei a justiça de Hedryl até esse monstro!"
@@ -17,6 +18,7 @@ label no_25:
 
 label no_26:
     scene bg_mornard with dissolve
+    $ tocar_musica("mus_mornard")
     narrador "O valente rapaz está morrendo porque salvou a garota, e Hedryl não aprovaria sua morte."
     narrador "Você ajoelha-se ao seu lado, retira as manoplas metálicas e começa o ritual de cura: uma luz suave é irradiada de suas mãos, curando magicamente as queimaduras. Marcas horríveis permanecem na pele do rapaz, mas ele vai viver."
     narrador "Você usa o que resta de seus poderes para confortar os feridos mais graves. Quando termina de curar um ancião moribundo, seu neto enxuga as lágrimas e diz que conhece uma entrada secreta para o templo."
@@ -30,6 +32,7 @@ label no_26:
 
 label no_27:
     scene bg_mornard with dissolve
+    $ tocar_musica("mus_mornard")
     narrador "Os feridos são muitos, e mesmo seus poderes divinos de cura talvez não sejam o bastante. Além disso, pode precisar deles se for ferido pelo dragão."
     narrador "Você se esforça para ignorar os lamentos das pessoas queimadas e deixa a vila, rumando para o templo."
     menu:
@@ -38,6 +41,7 @@ label no_27:
 
 label no_28:
     scene bg_colina_templo with dissolve
+    $ tocar_musica("mus_dragao")
     narrador "Caminhando até a colina, você logo encontra a construção arruinada - antiga igreja de algum culto esquecido."
     narrador "Você faz uma rápida oração aos deuses locais, pedindo permissão para pisar em seu solo sagrado - e avança pelo pórtico frontal."
     scene bg_templo_interior with dissolve
@@ -55,6 +59,7 @@ label no_28:
 
 label no_29:
     scene bg_templo_corredor with dissolve
+    $ tocar_musica("mus_dragao")
     narrador "Aproximando-se da colina, você vê as ruínas do templo. O mapa do garoto leva você a uma entrada lateral, escavada pelo tempo. Depois de alguns minutos percorrendo corredores escuros e úmidos, você alcança o salão principal."
     scene bg_templo_interior with dissolve
     narrador "Lá dentro, na imensidão do templo, uma forma escamosa enrosca-se à volta de um punhado de moedas e jóias. O dragão não viu você: sua cabeça está voltada para a entrada, na direção oposta."
@@ -68,9 +73,11 @@ label no_29:
 
 label no_30:
     scene bg_templo_interior with dissolve
+    $ tocar_musica("mus_dragao")
     narrador "O dragão tomba sem vida. Não irá mais molestar inocentes, não irá mais aterrorizar aldeões indefesos."
     narrador "Um grande mal foi vencido, e o preço a pagar foi muito pequeno: apenas sua vida."
     scene bg_final_ceu with dissolve
+    $ tocar_musica("mus_final_tragico")
     narrador "Na terra, sua coragem nunca será esquecida. A vila de Mornard prestará homenagens a seu salvador para sempre, os bardos cantarão suas batalhas pelo reino. E, no céu Hedryl estará esperando por seu mais valoroso guerreiro..."
     narrador "Fim."
     narrador "História publicada na revista Dragão Brasil Ano 1 número 12 pela Editora Trama."
@@ -79,6 +86,7 @@ label no_30:
 
 label no_31:
     scene bg_final_vila with dissolve
+    $ tocar_musica("mus_final_vitoria")
     narrador "Tendo matado sozinho um enorme dragão vermelho, coisa que os mais valentes guerreiros não conseguiram ou se recusaram fazer, você é aclamado como herói."
     narrador "O seu nome será uma lenda entre os cavaleiros da ordem de Hedryl, e você sempre encontrará amigos na vila de Mornard - bem como em qualquer lugar onde os bardos cantem sua bravura. Parabéns, você conseguiu!"
     narrador "Fim."

@@ -110,7 +110,8 @@ test('o jogo real tem, em cada nó, os cenários de SCENES na ordem certa, cada 
       assert.ok(!/nvl/.test(l), `nó ${node}: sobrou "nvl" no script`);
       const sc = l.match(/^\s+scene (\w+) with dissolve$/);
       if (sc) {
-        assert.match(lines[i + 1], /^\s+narrador "/, `nó ${node}: scene sem parágrafo logo depois`);
+        const prox = /tocar_musica\(/.test(lines[i + 1]) ? lines[i + 2] : lines[i + 1]; // a música, se houver, vem entre o cenário e o texto
+        assert.match(prox, /^\s+narrador "/, `nó ${node}: scene sem parágrafo logo depois`);
         found[node].push(sc[1]);
       }
     });

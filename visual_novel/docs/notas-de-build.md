@@ -113,3 +113,10 @@ Continuar, Opções, Sobre e Sair, este só no computador). O título fica em du
 português**; o resto da interface (menu rápido, Preferências, Salvar, Carregar, Sobre) continua em inglês por enquanto.
 Verificado no Ren'Py 8.5.3: lint sem erros (a tela do template é substituída sem conflito) e captura da tela.
 O lint lista avisos "already defined" para valores de `gui.*` que `characters.rpy` sobrepõe de propósito.
+
+## 11. Música (estrutura pronta, faixas pendentes)
+Escopo escolhido pelo autor: só música, 10 faixas que ele já possui. Estrutura: `game/musica.rpy` (`tocar_musica`, silêncio sem arquivo,
+mesma faixa não reinicia, fade de 1,5 s, música da tela inicial) e `tools/add-music.js` (insere as chamadas depois dos `scene`).
+Verificado no Ren'Py 8.5.3 com tons sintéticos de teste (não incluídos no repositório): a música da tela inicial toca, a de viagem
+começa ao iniciar, troca no nó do pântano, o nó sem arquivo fica em silêncio e a de derrota toca nas mortes; lint e playthroughs passam.
+Pendente: receber os arquivos e registrar fonte e licença em `assets.md`.

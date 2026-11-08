@@ -2,9 +2,11 @@
 
 label no_07:
     scene bg_estalagem with dissolve
+    $ tocar_musica("mus_estalagem")
     narrador "A jornada pelo caminho da direita é tranquila. Uma estalagem surge ao longe, e você apressa o passo - imaginando quão bom será comer uma refeição quente e dormir em uma cama macia."
     narrador "Você consegue um quarto, devora um grande pedaço de carne (felizmente sua ordem não exige dieta vegetariana), lava-se e vai dormir."
     scene bg_montanha_distante with dissolve
+    $ tocar_musica("mus_viagem")
     narrador "Pela manhã, após um rápido desjejum, você retoma o caminho da vila de Terum. A estrada bifurca-se novamente logo adiante: o caminho da direita segue sobre uma montanha, e o da esquerda passa por um vale que contorna a montanha."
     menu:
         "Seguir pela montanha ?":
@@ -14,6 +16,7 @@ label no_07:
 
 label no_08:
     scene bg_desfiladeiro with dissolve
+    $ tocar_musica("mus_viagem")
     narrador "O caminho da esquerda leva você a um gigantesco desfiladeiro. A fenda é enorme, e não há como chegar ao outro lado. Irritado pela perda de tempo, você volta para a encruzilhada e toma o caminho da direita."
     menu:
         "Continuar.":
@@ -21,6 +24,7 @@ label no_08:
 
 label no_09:
     scene bg_trilha_montanha with dissolve
+    $ tocar_musica("mus_viagem")
     narrador "O caminho da montanha pareceu mais atraente. Seguindo por uma trilha que passa entre as rochas, sob sombras refrescantes, você pensa em como seria penosa a caminhada pelo vale castigado pelo sol."
     narrador "Mas a trilha rochosa também apresenta suas desvantagens, como você descobre logo a seguir: vindo de uma caverna próxima, um urro poderoso anuncia a chegada de um enorme urso cinzento."
     narrador "A fera aproxima-se nas patas de trás, pronta a golpear com suas garras negras."
@@ -38,9 +42,11 @@ label no_09:
 
 label no_10:
     scene bg_vale with dissolve
+    $ tocar_musica("mus_viagem")
     narrador "O sol castiga você enquanto cruza o vale, fazendo-o pensar se não seria preferível ir pela montanha."
     narrador "A dúvida transforma-se em certeza quando, após algumas horas, você penetra em um antigo campo de batalha: uma clareira cheia de armaduras enferrujadas, armas quebradas e ossos humanos."
     scene bg_campo_batalha with dissolve
+    $ tocar_musica("mus_perigo")
     narrador "Você reza pelas almas desses guerreiros enquanto atravessa a clareira. Em certo momento, coisas movem-se no chão."
     narrador "A princípio você pensa se tratar de bichos escondidos nas carcaças, mas então você percebe: são as próprias carcaças. Os mortos estão se levantando para atacar você."
     if ferido_pescoco:
@@ -50,6 +56,7 @@ label no_10:
 
 label no_11:
     scene bg_desmoronamento with dissolve
+    $ tocar_musica("mus_viagem")
     narrador "Julgando que o risco da escalada vale a pena, você avança. Sobe devagar, procurando saliências firmes para se apoiar, sofrendo com o peso da armadura."
     narrador "No caminho até o topo, o inesperado acontece: sua bolsa de moedas cai, e rola até alguns metros abaixo de onde você está."
     menu:
@@ -60,6 +67,7 @@ label no_11:
 
 label no_12:
     scene bg_campo_batalha with dissolve
+    $ tocar_musica("mus_derrota")
     narrador "Você leva a mão ao pescoço, em busca de seu símbolo sagrado - o pequeno medalhão que poderá canalizar sua fé e esconjurar os mortos-vivos. Não encontra: deve ter sido arrancado no momento em que o scrag agarrou-o no pescoço."
     narrador "Agora só resta lutar. À medida que os mortos-vivos se aproximam, você começa a brandir sua espada. A lâmina sagrada transforma-os em pedaços facilmente - mas, para cada um que cai, dez outros se levantam."
     narrador "A luta incessante esgota suas forças, e os cadáveres acabam alcançando-o. Você sucumbe ao ataque de suas garras."
@@ -70,9 +78,11 @@ label no_12:
 
 label no_13:
     scene bg_campo_batalha with dissolve
+    $ tocar_musica("mus_perigo")
     narrador "Com a aproximação dos putrefatos mortos-vivos, você busca o pequeno medalhão de prata em formato de espada, o símbolo da justiça de Hedryl. Com uma prece, você pede a seu deus que afaste as criaturas malditas."
     narrador "Os cadáveres parecem espantados com a visão da pequena espada. Alguns emitem gritos sufocados e desmancham-se em pó, enquanto outros somem na escuridão. Agora é seguro prosseguir."
     scene bg_rio_ponte with dissolve
+    $ tocar_musica("mus_viagem")
     narrador "Sua viagem é interrompida por um rio com cerca de 50 metros de largura. Sua armadura proíbe qualquer tentativa de cruzá-lo a nado."
     narrador "Há uma ponte nas proximidades, mas ela parece velha e fraca demais para suportar um guerreiro pesadamente equipado."
     narrador "Enquanto você examina a ponte, uma pequena jangada aproxima-se. Seu ocupante é um homem de pele escura que tira o chapéu de palha e o cumprimenta-o com um sorriso de dentes falhos:"
@@ -85,6 +95,7 @@ label no_13:
 
 label no_14:
     scene bg_desmoronamento with dissolve
+    $ tocar_musica("mus_viagem")
     narrador "Na tentativa de recuperar seu dinheiro, você experimenta descer um pouco a encosta - quando olha para baixo e descobre que é uma queda imensa!"
     narrador "Não se trata apenas da distância entre você e a trilha, porque você está em um lugar diferente e corre o risco de rolar centenas de metros montanha abaixo. O risco é maior do que supunha."
     menu:
@@ -95,10 +106,12 @@ label no_14:
 
 label no_15:
     scene bg_desmoronamento with dissolve
+    $ tocar_musica("mus_viagem")
     narrador "Você se recorda os ensinamentos dos clérigos de sua ordem, sobre como a ganância sempre leva à ruína."
     narrador "Arriscar-se por algumas moedas não seria sábio. Você esquece a bolsa e completa a escalada atravessando o desmoronamento em segurança e retornando à trilha."
     narrador "Você continua no caminho até que, restando apenas alguns minutos para o pôr-do-sol, avista uma estalagem e segue para lá."
     scene bg_estalagem with dissolve
+    $ tocar_musica("mus_estalagem")
     narrador "A estalagem é quente e acolhedora. Você se senta em uma mesa próxima à lareira, e uma rapariga serve-lhe um prato de sopa fumegante."
     narrador "Antes que você possa dizer qualquer coisa, um homem baixo e de grandes bigodes apresenta-se como Stew, o dono do estabelecimento."
     narrador "Diz que a sopa é por conta da casa, e que um quarto, comida e um banhão custarão quatro peças de cobre."
@@ -110,6 +123,7 @@ label no_15:
 
 label no_16:
     scene bg_rio_jangada with dissolve
+    $ tocar_musica("mus_perigo")
     narrador "Você entrega algumas moedas ao homem, que coloca a jangada em movimento. Quando estão no meio do rio, contudo, o jangadeiro exibe um sorriso matreiro:"
     narrador "- Agora, amigo, se quiser chegar à outra margem com vida, irá entregar-me todo o seu dinheiro."
     menu:
@@ -120,10 +134,12 @@ label no_16:
 
 label no_17:
     scene bg_rio_ponte with dissolve
+    $ tocar_musica("mus_viagem")
     narrador "Você olha melhor para a ponte, e acha que ela não irá desabar sob os pés de um servo dos deuses. Agradecendo ao jangadeiro pela oferta, você declina e segue pela ponte."
     narrador "Ela range um pouco em protesto, mas cumpre seu papel; você chega ao outro lado em segurança."
     narrador "O rio e a ponte foram deixados para trás. A noite cairá logo. As luzes de uma taverna podem ser vistas ao longe, e você segue para lá."
     scene bg_estalagem with dissolve
+    $ tocar_musica("mus_estalagem")
     narrador "A estalagem é quente e acolhedora. Você se senta em uma mesa próxima à lareira, e uma rapariga serve-lhe um prato de sopa fumegante."
     narrador "Antes que você possa dizer qualquer coisa, um homem baixo e de grandes bigodes apresenta-se como Stew, o dono do estabelecimento."
     narrador "Diz que a sopa é por conta da casa, e que um quarto, comida e um banhão custarão quatro peças de cobre."
@@ -137,12 +153,14 @@ label no_17:
 
 label no_18:
     scene bg_rio_jangada with dissolve
+    $ tocar_musica("mus_perigo")
     narrador "Você analisa sua situação: está no meio de um rio, em uma frágil jangada, que pode desmanchar-se se tentar um combate. Sua armadura faria com que afundasse feito pedra. Dando de ombros, você entrega a bolsa."
     narrador "O jangadeiro sorri em aprovação e prossegue remando."
     narrador "Quando estão próximos da margem, um remo atinge suas costas e derruba você na água. Felizmente a água não é profunda aqui - mas, quando consegue se levantar, o jangadeiro já está longe."
     narrador "Você amaldiçoa sua tolice, prometendo a si mesmo que, depois do dragão, esse assaltante será o próximo a provar a justiça de Hedryl."
     narrador "A viagem segue tranquila. Quando o sol aproxima-se do horizonte, você vê uma estalagem e segue sua direção."
     scene bg_estalagem with dissolve
+    $ tocar_musica("mus_estalagem")
     narrador "A estalagem é quente e acolhedora. Você se senta em uma mesa próxima à lareira, e uma rapariga serve-lhe um prato de sopa fumegante."
     narrador "Antes que você possa dizer qualquer coisa, um homem baixo e de grandes bigodes apresenta-se como Stew, o dono do estabelecimento."
     narrador "Diz que a sopa é por conta da casa, e que um quarto, comida e um banhão custarão quatro peças de cobre."
@@ -154,6 +172,7 @@ label no_18:
 
 label no_19:
     scene bg_desmoronamento with dissolve
+    $ tocar_musica("mus_derrota")
     narrador "Você continua descendo em busca de seus pertences, mas a armadura é desajeitada para alpinismo. Em certo ponto você perde o apoio e cai."
     narrador "Pois é, você esqueceu os ensinamentos de sua ordem, e deixou que a ganância fosse maior que a prudência. Seu cadáver arrebentado servirá de alimento para abutres e hienas."
     menu:
@@ -162,6 +181,7 @@ label no_19:
 
 label no_20:
     scene bg_rio_jangada with dissolve
+    $ tocar_musica("mus_derrota")
     narrador "Você ri do jangadeiro, perguntando se é alguma brincadeira. Quando entende que não receberá dinheiro algum, o assaltante empurra você com um movimento rápido do remo."
     narrador "O peso da armadura desequilibra você, fazendo com que caia na água e afunde."
     narrador "Afogamento. Que triste fim para um guerreiro de Hedryl..."
@@ -172,6 +192,7 @@ label no_20:
 
 label no_21:
     scene bg_rio_jangada with dissolve
+    $ tocar_musica("mus_derrota")
     narrador "Você ri do jangadeiro, perguntando se é alguma brincadeira. Quando entende que não receberá dinheiro algum, o assaltante empurra você com um movimento rápido do remo."
     narrador "O peso da armadura desequilibra você, fazendo com que caia na água e afunde."
     narrador "Afogamento. Que triste fim para um guerreiro de Hedryl..."
@@ -182,6 +203,7 @@ label no_21:
 
 label no_22:
     scene bg_estalagem with dissolve
+    $ tocar_musica("mus_estalagem")
     narrador "Você aceita a sopa, mas diz que não pode pagar. Quando o estalajadeiro pergunta o que alguém faz sem dinheiro em um lugar como aquele, você fala sobre sua caça ao dragão que ameaça a vila de Mornard."
     narrador "- Um guerreiro de Hedryl! - espanta-se o pequeno Stew. - Não se preocupe com o dinheiro, nobre herói. Será uma honra ajudá-lo em sua missão sagrada, especialmente se puder livrar Mornard daquele monstro ganancioso."
     narrador "Ele está arruinando meus negócios!"
@@ -200,6 +222,7 @@ label no_22:
 
 label no_23:
     scene bg_estalagem with dissolve
+    $ tocar_musica("mus_estalagem")
     narrador "Você aceita a sopa, mas diz que não pode pagar. Quando o estalajadeiro pergunta o que alguém faz sem dinheiro em um lugar como aquele, você responde; a missão de um guerreiro de Hedryl não diz respeito a qualquer um."
     scene bg_estabulo with dissolve
     narrador "O estalajadeiro fecha a cara. Diz que não faz caridade, e mostra-lhe a porta. Sem alternativa, você deixa a estalagem e procura um lugar para dormir no estábulo."
@@ -210,6 +233,7 @@ label no_23:
 
 label no_24:
     scene bg_estalagem with dissolve
+    $ tocar_musica("mus_estalagem")
     narrador "Você saca quatro moedas da bolsa e entrega ao estalajadeiro, que retira-se com um sorriso. Pouco depois, a rapariga retorna com vinho e um grande pedaço de carne de javali."
     narrador "Você come até fartar-se (pedindo perdão aos deuses pela gula, claro) e retira-se para seu quarto, onde encontra uma bacia de água quente para seu banho."
     narrador "Limpo e alimentado, você faz suas orações e desaba na cama, entregue aos deuses dos sonhos."
