@@ -146,3 +146,14 @@ As duas faixas somam 27,5 MB; se pesar no APK, converter para `.ogg`.
 `game/audio/mus_pantano.mp3` = "Swamp Planet", também de Tabletop Audio (10 min, 13,75 MB, 192 kbps, íntegra), nos nós do pântano (1, 2, 3, 5 e 6).
 Crédito dos finais atualizado para as três faixas. Verificado no Ren'Py: `mus_inicio` no nó 0 e `mus_pantano` ao escolher o pântano; lint e
 playthroughs passam. Três faixas de 10 minutos somam 41 MB; para aliviar o APK, converter para `.ogg`. Licença e uso comercial a confirmar.
+
+## 16. Personagens sobre o cenário e música de derrota
+- Duas ilustrações enviadas pelo autor (fundo branco) viraram PNG transparente: `char_heroi_caminhando.png` (herói andando) e
+  `char_scrags.png` (herói contra 2 scrags). O fundo é removido só onde o branco toca a borda da imagem (o branco dentro do personagem, como a capa,
+  é preservado) e, nos scrags, as manchas brancas do chão foram limpas à parte; ficou uma sombra cinza suave sob os pés. Altura final de 480 e 400 px.
+- Posições em `game/personagens.rpy`, com o pé um pouco acima da caixa de texto.
+- Herói: aparece no início do nó 0 e some antes de "Quantidade pequena demais para fazer frente a um guerreiro de Hedryl." (onde a história passa
+  a enfrentar os bandidos; interpretação do autor a confirmar). Scrags: aparecem na fala que os apresenta (nó 2) e, nos nós 5 e 6, no início até
+  "Você continua seguindo..." (o herói vence ou escapa). Como cada `scene` limpa a tela, o personagem é mostrado de novo em cada nó.
+- `mus_derrota.mp3` = "No Hope", de **Cleyton R. Xavier** (13 s, outro autor, não Tabletop Audio), toca uma vez só (`FAIXAS_SEM_LOOP`), nas 5 mortes.
+  Crédito acrescentado nos finais. Verificado no Ren'Py: toca ao morrer e para sozinha; capturas confirmam as entradas e saídas dos personagens.

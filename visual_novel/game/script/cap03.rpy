@@ -83,6 +83,7 @@ label no_30:
     narrador "História publicada na revista Dragão Brasil Ano 1 número 12 pela Editora Trama."
     narrador "História de Andreas McCullosh & Paladino."
     narrador "Música: Dedication Day, Homecoming e Swamp Planet, de Tabletop Audio - https://tabletopaudio.com/"
+    narrador "Música: No Hope, de Cleyton R. Xavier"
     return
 
 label no_31:
@@ -94,4 +95,5 @@ label no_31:
     narrador "História publicada na revista Dragão Brasil Ano 1 número 12 pela Editora Trama."
     narrador "História de Andreas McCullosh & Paladino."
     narrador "Música: Dedication Day, Homecoming e Swamp Planet, de Tabletop Audio - https://tabletopaudio.com/"
+    narrador "Música: No Hope, de Cleyton R. Xavier"
     return

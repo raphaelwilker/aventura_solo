@@ -4,8 +4,10 @@ label no_00:
     $ ferido_pescoco = False
     scene bg_estrada with dissolve
     $ tocar_musica("mus_inicio")
+    show char_heroi_caminhando at posicao_heroi with dissolve
     narrador "As comemorações terminaram e você está a caminho de casa, em uma vila próxima, quando ocorre um encontro inesperado; um viajante está caído à beira da estrada."
     narrador "Suas roupas estão sujas e rasgadas, embora pareçam ter sido de luxuosas outrora. E ele está sendo cruelmente espancado por um bando de ladrões. Cinco deles."
+    hide char_heroi_caminhando with dissolve
     narrador "Quantidade pequena demais para fazer frente a um guerreiro de Hedryl."
     narrador "A luta é breve. Os assaltantes que não morreram fogem da fúria de sua lâmina. Você devolve a Espada Sagrada à bainha e presta socorro ao viajante caído."
     narrador "Quando ele se recupera, diz que está procurando ajuda para sua vila - que está sendo aterrorizada por um dragão. Um dragão vermelho."
@@ -38,6 +40,7 @@ label no_02:
     $ tocar_musica("mus_pantano")
     narrador "Preocupado com as pessoas que possam vir a ser mortas pelo dragão, você entra no Pântano da Agonia para ganhar tempo."
     narrador "Caminha através de lama e águas estagnadas até o poente, parando apenas por um instante para acender uma tocha e beliscar um pedaço de carne defumada."
+    show char_scrags at posicao_scrags with dissolve
     narrador "Durante essa rápida pausa, ruídos incomuns chegam até você. Passos aproximam-se, sombras movem-se adiante. Da escuridão surgem duas criaturas bípedes, esverdeadas e tremendamente feias: são scrags, os trolls d'água."
     menu:
         "Lutar ?":
@@ -81,9 +84,11 @@ label no_04:
 label no_05:
     scene bg_pantano_dentro with dissolve
     $ tocar_musica("mus_pantano")
+    show char_scrags at posicao_scrags with dissolve
     narrador "Ao olhar para aqueles horrendos monstros, você se lembra de ter ouvido algo sobre os scrags: eles, como os trolls, temem fogo. Você procura mantê-los afastados com a tocha enquanto procura por um frasco de óleo em sua mochila."
     narrador "Quando encontra, joga-a com toda a sua força contra um dos scrags. Ela se quebra, cobrindo a criatura com óleo inflamável, e basta um toque de sua tocha para fazê-lo arder em chamas."
     narrador "Você se vira para enfrentar o outro scrag, apenas para notar que este foge para a escuridão. Tendo a tocha em uma mão e outro frasco de óleo na outra, você segue viagem."
+    hide char_scrags with dissolve
     narrador "Você continua seguindo, agora mais atento a sons peculiares, até deixar o pântano. Quando está longe, aproveita para descansar um pouco e aliviar suas dores. Já é de manhã e você está longe do Pântano da Agonia."
     scene bg_encruzilhada with dissolve
     $ tocar_musica("mus_viagem")
@@ -98,12 +103,14 @@ label no_06:
     $ ferido_pescoco = True
     scene bg_pantano_dentro with dissolve
     $ tocar_musica("mus_pantano")
+    show char_scrags at posicao_scrags with dissolve
     narrador "Além de garras e presas temíveis, os scrags, possuem a capacidade de regenerar ferimentos muito rapidamente; suas feridas começam a cicatrizar logo depois de abertas, e membros amputados crescem de novo inteiramente."
     narrador "Mesmo sua Espada Sagrada pode não ser suficiente para matar tais monstros."
     narrador "Você acha mais sensato fugir através do pântano."
     narrador "Quando você julgava ter deixado os scrags para trás, um deles salta sobre você, agarrando-o pelas costas. Você é tomado de horror e tenta livrar-se a todo custo."
     narrador "Seu espadanar desesperado termina por soltá-lo das garras do monstro, e você consegue correr para longe - tendo apenas um arranhão no pescoço."
     narrador "Bem não há problema: guerreiros de Hedryl são imunes a doenças vulgares, e scrags não transmitem qualquer tipo de praga mágica, como licantropia ou coisa parecida."
+    hide char_scrags with dissolve
     narrador "Você continua seguindo, agora mais atento a sons peculiares, até deixar o pântano. Quando está longe, aproveita para descansar um pouco e aliviar suas dores. Já é de manhã e você está longe do Pântano da Agonia."
     scene bg_encruzilhada with dissolve
     $ tocar_musica("mus_viagem")

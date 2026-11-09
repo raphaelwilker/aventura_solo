@@ -14,7 +14,7 @@ Sugestão: faixas de 2 a 3 minutos que repetem sem corte perceptível, em `.ogg`
 | `mus_estalagem` | Estalagem de Stew: calor e descanso | 7, 15 (a partir de "estalagem"), 17 (a partir de "estalagem"), 18 (a partir de "estalagem"), 22, 23, 24 | pendente |
 | `mus_mornard` | Vila de Mornard em ruínas: desolação | 25, 26, 27 | pendente |
 | `mus_dragao` | Templo e o dragão vermelho: o confronto final | 28, 29, 30 | pendente |
-| `mus_derrota` | Fim de jogo: as mortes que levam a "Recomeçar" | 4, 12, 19, 20, 21 | pendente |
+| `mus_derrota` | Fim de jogo: as mortes que levam a "Recomeçar" | 4, 12, 19, 20, 21 | **pronto**: `mus_derrota.mp3` (No Hope, Cleyton R. Xavier; vinheta de 13 s, toca uma vez só) |
 | `mus_final_tragico` | Final trágico (nó 30): o herói morre, o dragão tomba | 30 (a partir de "final_ceu") | pendente |
 | `mus_final_vitoria` | Final vitorioso (nó 31): o herói aclamado | 31 | pendente |
 

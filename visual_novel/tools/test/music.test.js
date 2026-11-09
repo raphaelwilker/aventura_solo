@@ -77,7 +77,9 @@ test('o jogo real tem, em cada nó, as faixas de MUSIC na ordem, cada uma logo a
       const t = l.match(/^\s+\$ tocar_musica\("(mus_\w+)"\)$/);
       if (t) {
         assert.match(lines[i - 1], /^\s+scene /, `nó ${node}: música sem cenário antes`);
-        assert.match(lines[i + 1], /^\s+narrador "/, `nó ${node}: música sem parágrafo depois`);
+        let k = i + 1;
+        while (/^\s+(show|hide) /.test(lines[k])) k += 1; // linhas de personagem podem vir entre a música e o texto
+        assert.match(lines[k], /^\s+narrador "/, `nó ${node}: música sem parágrafo depois`);
         found[node].push(t[1]);
       }
     });

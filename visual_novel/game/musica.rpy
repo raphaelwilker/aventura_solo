@@ -5,6 +5,8 @@ default musica_atual = None
 
 init python:
     EXTENSOES_AUDIO = ("ogg", "opus", "mp3", "flac", "wav")
+    # Vinhetas curtas tocam uma vez só (não em loop): a música de derrota tem ~13 s.
+    FAIXAS_SEM_LOOP = ("mus_derrota",)
 
     def arquivo_de_musica(faixa):
         for ext in EXTENSOES_AUDIO:
@@ -21,7 +23,7 @@ init python:
         store.musica_atual = faixa
         arquivo = arquivo_de_musica(faixa)
         if arquivo:
-            renpy.music.play(arquivo, channel="music", loop=True, fadein=1.5, fadeout=1.5)
+            renpy.music.play(arquivo, channel="music", loop=(faixa not in FAIXAS_SEM_LOOP), fadein=1.5, fadeout=1.5)
         else:
             renpy.music.stop(channel="music", fadeout=1.5)
 

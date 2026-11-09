@@ -51,3 +51,11 @@ forem produzidos.
 | pronto | `mus_titulo.mp3` | "Dedication Day" (10 min, 192 kbps) | Tabletop Audio, https://tabletopaudio.com/ (enviada pelo autor, 2026-11-08) | **a confirmar** | **a confirmar** | sim, por precaução: aparece nos finais (nós 30 e 31) | tela inicial |
 | pronto | `mus_inicio.mp3` | "Homecoming" (10 min, 192 kbps) | Tabletop Audio, https://tabletopaudio.com/ (enviada pelo autor, 2026-11-08) | **a confirmar** | **a confirmar** | sim, por precaução: aparece nos finais (nós 30 e 31) | começo da história (nó 0) |
 | pronto | `mus_pantano.mp3` | "Swamp Planet" (10 min, 192 kbps) | Tabletop Audio, https://tabletopaudio.com/ (enviada pelo autor, 2026-11-09) | **a confirmar** | **a confirmar** | sim, por precaução: aparece nos finais (nós 30 e 31) | Pântano da Agonia (nós 1, 2, 3, 5, 6) |
+| pronto | `mus_derrota.mp3` | "No Hope" (13 s, vinheta, 320 kbps) | Cleyton R. Xavier (etiqueta ID3; enviada pelo autor, 2026-11-09) | **a confirmar** | **a confirmar** | sim: "Música: No Hope, de Cleyton R. Xavier" nos finais | mortes (nós 4, 12, 19, 20, 21), toca uma vez |
+
+## Personagens (PNG transparente)
+| Status | Arquivo | O quê | Fonte | Licença | Uso comercial | Onde aparece |
+|---|---|---|---|---|---|---|
+| pronto | `char_heroi_caminhando.png` | herói de armadura caminhando (480 px de altura) | enviada pelo autor (gerada por IA; **ferramenta a informar**), 2026-11-09; fundo branco removido por script (Pillow/SciPy) | **a confirmar** | **a confirmar** | nó 0: do início até "Quantidade pequena demais..." |
+| pronto | `char_scrags.png` | herói lutando contra 2 scrags (400 px de altura) | idem | **a confirmar** | **a confirmar** | nó 2 (a partir da fala dos scrags), nós 5 e 6 (até "Você continua seguindo...") |
+

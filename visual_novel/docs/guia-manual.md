@@ -27,7 +27,7 @@ Para usar no Ren'Py, copie o conteúdo de `visual_novel/game/` para a pasta **`g
 | `mus_estalagem` | estalagem de Stew | não |
 | `mus_mornard` | vila de Mornard em ruínas | não |
 | `mus_dragao` | templo e dragão | não |
-| `mus_derrota` | as mortes que levam a "Recomeçar" | não |
+| `mus_derrota` | as mortes que levam a "Recomeçar" | sim (No Hope, vinheta de 13 s, toca uma vez) |
 | `mus_final_tragico` | final do nó 30 | não |
 | `mus_final_vitoria` | final do nó 31 | não |
 
@@ -53,6 +53,16 @@ procure o `label no_NN:` do nó e troque o nome da faixa. Não apague o `$ ` do 
 ## 4. Colocar uma imagem de cenário
 Salve em `game/images/` com o nome do cenário (`bg_estrada.jpg`, 1280x720, jpg/png/webp). A cor lisa provisória some sozinha.
 Lista de nomes e prompts em `docs/guia-de-arte.md`.
+
+## 4b. Mostrar um personagem sobre o cenário
+1. Salve o PNG com fundo transparente em `game/images/` como `char_nome.png` (cerca de 400 a 480 px de altura).
+2. No `.rpy` do nó (`game/script/cap0X.rpy`), na linha onde ele deve aparecer, escreva (4 espaços de recuo):
+
+       show char_nome at posicao_heroi with dissolve
+
+   e, onde deve sumir: `hide char_nome with dissolve`. As posições (`posicao_heroi`, à direita; `posicao_scrags`, ao centro) estão em
+   `game/personagens.rpy`. **Atenção:** cada `scene` limpa a tela, então o personagem precisa ser mostrado de novo em cada nó.
+3. Exemplos prontos: nós 0, 2, 5 e 6 de `game/script/cap01.rpy`.
 
 ## 5. Trocar o título do jogo
 Edite as duas primeiras linhas de `game/tela_inicial.rpy`:
