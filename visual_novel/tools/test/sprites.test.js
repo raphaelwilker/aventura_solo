@@ -53,7 +53,7 @@ test('só esses nós mostram personagens (1 do herói + 3 dos scrags; 1 + 2 sumi
 
 test('personagens.rpy define as posições (acima da caixa de texto)', () => {
   const p = fs.readFileSync(path.join(GAME, 'personagens.rpy'), 'utf8');
-  assert.match(p, /^transform posicao_heroi:\n    xpos 0\.80 xanchor 0\.5 ypos 505 yanchor 1\.0$/m);
+  assert.match(p, /^transform posicao_heroi:\n    xpos 0\.5 xanchor 0\.5 ypos 505 yanchor 1\.0$/m); // centralizado na tela
   assert.match(p, /^transform posicao_scrags:\n    xpos 0\.5 xanchor 0\.5 ypos 505 yanchor 1\.0$/m);
 });
 

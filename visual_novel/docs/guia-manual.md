@@ -60,7 +60,7 @@ Lista de nomes e prompts em `docs/guia-de-arte.md`.
 
        show char_nome at posicao_heroi with dissolve
 
-   e, onde deve sumir: `hide char_nome with dissolve`. As posições (`posicao_heroi`, à direita; `posicao_scrags`, ao centro) estão em
+   e, onde deve sumir: `hide char_nome with dissolve`. As posições (ambas ao centro) estão em
    `game/personagens.rpy`. **Atenção:** cada `scene` limpa a tela, então o personagem precisa ser mostrado de novo em cada nó.
 3. Exemplos prontos: nós 0, 2, 5 e 6 de `game/script/cap01.rpy`.
 
