@@ -132,7 +132,7 @@ teste, uma vez por execução. Não tinha rodado os playthroughs desde a tela in
 `game/audio/mus_titulo.mp3` = "Dedication Day", de **Tabletop Audio** (https://tabletopaudio.com/; autoria e fonte vêm das etiquetas ID3 do
 arquivo), enviada pelo autor: 10 minutos, 13,75 MB, 192 kbps, sem corrupção (`ffmpeg` decodifica sem erros). Toca na tela inicial e some
 com fade ao iniciar o jogo (ainda não há música de viagem). Os dois finais (nós 30 e 31) mostram, depois dos créditos da história, a linha
-"Música: Dedication Day e Homecoming, de Tabletop Audio - https://tabletopaudio.com/". **Licença e uso comercial a confirmar** com o Tabletop Audio.
+"Música: Dedication Day, Homecoming e Swamp Planet, de Tabletop Audio - https://tabletopaudio.com/". **Licença e uso comercial a confirmar** com o Tabletop Audio.
 O arquivo é grande: se pesar no APK, dá para converter para `.ogg` (cerca de 40% menor).
 
 ## 14. Segunda música: começo da história
@@ -141,3 +141,8 @@ só no nó 0 (a volta para casa e o encontro com o viajante); a música de viage
 Interpretação do autor ("começo da história") a confirmar: se for para ser a música de viagem em geral, é só renomear o arquivo para
 `mus_viagem.mp3`. Verificado no Ren'Py: a música do menu toca, `mus_inicio` entra ao iniciar e some com fade no nó seguinte (sem música ainda).
 As duas faixas somam 27,5 MB; se pesar no APK, converter para `.ogg`.
+
+## 15. Terceira música: pântano
+`game/audio/mus_pantano.mp3` = "Swamp Planet", também de Tabletop Audio (10 min, 13,75 MB, 192 kbps, íntegra), nos nós do pântano (1, 2, 3, 5 e 6).
+Crédito dos finais atualizado para as três faixas. Verificado no Ren'Py: `mus_inicio` no nó 0 e `mus_pantano` ao escolher o pântano; lint e
+playthroughs passam. Três faixas de 10 minutos somam 41 MB; para aliviar o APK, converter para `.ogg`. Licença e uso comercial a confirmar.

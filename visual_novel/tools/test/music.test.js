@@ -105,7 +105,7 @@ test('a música da tela inicial (mus_titulo) está em game/audio/, com uma exten
   assert.ok(fs.statSync(achados[0]).size > 100000, 'arquivo muito pequeno');
 });
 
-test('os dois finais creditam as músicas (Dedication Day e Homecoming, Tabletop Audio, com o link) logo depois dos créditos da história', () => {
+test('os dois finais creditam as músicas (Dedication Day, Homecoming e Swamp Planet, Tabletop Audio, com o link) logo depois dos créditos da história', () => {
   const cap03 = fs.readFileSync(path.join(GAME_SCRIPT, 'cap03.rpy'), 'utf8');
   for (const no of ['no_30', 'no_31']) {
     const ini = cap03.indexOf(`label ${no}:`);
@@ -115,7 +115,7 @@ test('os dois finais creditam as músicas (Dedication Day e Homecoming, Tabletop
     assert.ok(i > -1, `${no}: faltam os créditos da história`);
     assert.strictEqual(
       bloco[i + 1],
-      '    narrador "Música: Dedication Day e Homecoming, de Tabletop Audio - https://tabletopaudio.com/"',
+      '    narrador "Música: Dedication Day, Homecoming e Swamp Planet, de Tabletop Audio - https://tabletopaudio.com/"',
       `${no}: o crédito da música deve vir logo depois dos créditos da história`,
     );
   }
@@ -128,5 +128,14 @@ test('a música do começo da história (mus_inicio) toca só no nó 0 e está e
   const dir = path.join(GAME, 'audio');
   const achados = ['ogg', 'opus', 'mp3', 'flac', 'wav'].map((e) => path.join(dir, `mus_inicio.${e}`)).filter((f) => fs.existsSync(f));
   assert.strictEqual(achados.length, 1, 'deve haver exatamente um arquivo mus_inicio.*');
+  assert.ok(fs.statSync(achados[0]).size > 100000);
+});
+
+test('a música do pântano (mus_pantano) está em game/audio/ e toca nos nós do pântano', () => {
+  const nos = Object.entries(MUSIC).filter(([, l]) => l.some((m) => m.track === 'mus_pantano')).map(([id]) => Number(id));
+  assert.deepStrictEqual(nos, [1, 2, 3, 5, 6]);
+  const dir = path.join(GAME, 'audio');
+  const achados = ['ogg', 'opus', 'mp3', 'flac', 'wav'].map((e) => path.join(dir, `mus_pantano.${e}`)).filter((f) => fs.existsSync(f));
+  assert.strictEqual(achados.length, 1, 'deve haver exatamente um arquivo mus_pantano.*');
   assert.ok(fs.statSync(achados[0]).size > 100000);
 });

@@ -50,3 +50,4 @@ forem produzidos.
 |---|---|---|---|---|---|---|---|
 | pronto | `mus_titulo.mp3` | "Dedication Day" (10 min, 192 kbps) | Tabletop Audio, https://tabletopaudio.com/ (enviada pelo autor, 2026-11-08) | **a confirmar** | **a confirmar** | sim, por precaução: aparece nos finais (nós 30 e 31) | tela inicial |
 | pronto | `mus_inicio.mp3` | "Homecoming" (10 min, 192 kbps) | Tabletop Audio, https://tabletopaudio.com/ (enviada pelo autor, 2026-11-08) | **a confirmar** | **a confirmar** | sim, por precaução: aparece nos finais (nós 30 e 31) | começo da história (nó 0) |
+| pronto | `mus_pantano.mp3` | "Swamp Planet" (10 min, 192 kbps) | Tabletop Audio, https://tabletopaudio.com/ (enviada pelo autor, 2026-11-09) | **a confirmar** | **a confirmar** | sim, por precaução: aparece nos finais (nós 30 e 31) | Pântano da Agonia (nós 1, 2, 3, 5, 6) |
