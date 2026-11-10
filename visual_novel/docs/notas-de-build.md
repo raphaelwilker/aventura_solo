@@ -167,3 +167,9 @@ playthroughs passam. Três faixas de 10 minutos somam 41 MB; para aliviar o APK,
 - `game/audio/mus_final_vitoria.mp3` = "Village Festival", Tabletop Audio (10 min, 13,75 MB, 192 kbps, íntegra), no final do nó 31 (o herói derrota o dragão e é
   aclamado em Mornard). Crédito dos finais atualizado para as 4 faixas de Tabletop Audio + "No Hope" (Cleyton R. Xavier). Verificado no Ren'Py: toca no nó 31.
 - O nó 30 (final trágico) continua sem música própria (`mus_final_tragico`).
+
+## 18. Vãos brancos sob os braços (imagem da luta)
+Sobravam bolsões de branco puro cercados pelo desenho (sob o braço de cada scrag, entre o braço e o corpo do scrag da esquerda e sob o braço do herói
+que segura o porrete), que o recorte pela borda não alcança. Remoção pós-processada direto no PNG: componentes de branco opaco com área >= 100 px e
+brancura média >= 250, ou >= 40 px e >= 249 com saturação máxima <= 10 (5 componentes). Brilhos da armadura e o rastro da espada ficam de fora
+(são menores, ou mais amarelados). A imagem do herói caminhando não tinha vãos brancos, só reflexos da armadura. Verificado sobre magenta e no jogo.
