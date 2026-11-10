@@ -1,0 +1,175 @@
+# Notas de build (Task 7)
+
+Executado em 2026-11-07 por Claude, de forma automatizada (Linux, sem tela física, via Xvfb), a
+pedido do autor. Projeto de teste montado a partir do template de GUI do SDK (`gui/game`) com os
+arquivos de `visual_novel/game/` por cima, mais `visual_novel/tests/playthrough.rpy`.
+
+- Versão do Ren'Py: **8.5.3.26051504**
+- O que **não** foi verificado: Windows, macOS, Android e iOS, abrir o jogo em um celular de
+  verdade, e a aparência com arte (não há arte; só o tema padrão do Ren'Py).
+
+## 1. Integração
+- [x] Template de GUI do SDK + `script/`, `state.rpy`, `script.rpy` (o `script.rpy` do template foi substituído).
+- `options.rpy` do template: nome "Aventura Solo".
+
+## 2. Lint
+- [x] `renpy.sh <projeto> lint` terminou sem erros e sem avisos: 108 blocos de diálogo, 3.739 palavras, 29 menus, 24 telas.
+- Os 29 menus = 32 nós - 2 finais - nó 10 (que virou desvio automático).
+
+## 3. Playthroughs (`renpy.sh <projeto> test playthrough`)
+- [x] Final do nó 30 (nó 25 "Ajudar" → "Entrar pela porta da frente" → 28 → 30)
+- [x] Final do nó 31 (nó 25 "Ajudar" → "Ir pela entrada secreta" → 29 → 31)
+- [x] Flag: "Passar pelo Pântano" → "Fugir" (nó 6) liga `ferido_pescoco`; o nó 10 vai ao nó 12 (morte); "Recomeçar" zera a flag; sem o nó 6, o nó 10 vai ao nó 13.
+- Resultado: 3 de 3 testcases passaram, 6 asserts, status PASSED.
+- Prova de mutação: removendo `$ ferido_pescoco = False` do `no_00`, o teste de flag falha em `assert eval (not ferido_pescoco)`.
+- Observação: o teste só passa o nó 7 pelo "Seguir pelo vale"; o caminho "Seguir pela montanha" (nós 9, 11, 14, 15, 19) e os outros desfechos de morte (4, 19, 20, 21) **não** foram percorridos. O validador estático cobre os links, mas não o texto.
+
+## 4. Exportação
+- [x] **Linux** (`distribute --package linux`): `AventuraSolo-1.0-linux.tar.bz2` = **22,9 MB**. Gerado, não executado.
+- [x] **Web** (`web_build`, com o suporte web 8.5.3 baixado do site do Ren'Py): **44 MB** em disco, dos quais `renpy.wasm` 20,6 MB, `renpy.data` 14,4 MB e `game.zip` 4,6 MB.
+  - Abriu no Chromium (Playwright, 1280x720): menu principal em ~10 s, sem erros no console; "Start" mostra o primeiro texto com acentos corretos.
+  - Peso fixo do motor (~35 MB) domina; o jogo em si é pequeno (4,6 MB). Em celular com rede lenta o primeiro carregamento será o ponto fraco. **Não testado em celular.**
+- [ ] Android: não tentado (exige JDK e Android SDK).
+
+## 5. Texto longo: resolvido com o modo NVL
+No navegador, o primeiro parágrafo (~280 caracteres) ultrapassava a caixa de diálogo padrão, e 56 dos
+108 parágrafos passam de 200 caracteres (mediana 205, maior 535). Adotado o modo NVL do Ren'Py
+(texto ocupando a tela, como numa light novel):
+- o emissor escreve `narrador "..."` com `nvl clear` no início de cada nó e quando uma página passaria
+  de 900 caracteres (`NVL_PAGE_CHARS`);
+- `game/characters.rpy` define o narrador NVL, `menu = nvl_menu` e `gui.nvl_height = None`.
+
+Dois defeitos apareceram só ao jogar de verdade e foram corrigidos com teste:
+1. Sem `menu = nvl_menu` o texto **sumia** quando o menu aparecia (só as opções ficavam na tela).
+2. O template de GUI fixa cada parágrafo NVL em 115 px (`gui.nvl_height`); parágrafos longos se
+   **sobrepunham** (visto no nó 22). Com `None` a altura é automática.
+
+Conferido por screenshots no Ren'Py, iniciando com `Start()` como um jogador (e não com `Jump`, que
+deixa o menu principal ao fundo e dá screenshots enganosos): nó 0 (2ª página + opções) e nó 22 (maior
+texto, última página + "Continuar"). Lint e os 3 playthroughs continuam passando. O NVL muda o nome da
+tela de menu (`nvl`, não `choice`), então os testes esperam pelo texto da opção.
+
+**Os tamanhos de build da seção 4 foram medidos antes do NVL** (o jogo em si muda pouco; o peso é o
+motor). Reexportar para confirmar.
+
+## 6. Cenários provisórios e painel NVL
+Cada nó mostra seu cenário (`scene ... with dissolve`); 21 cenários, com fundo provisório (cor lisa e
+o nome) até existir a imagem em `game/images/`. Verificado no Ren'Py 8.5.3: lint limpo, 3 playthroughs
+passando, troca de cenário no meio do nó (ex.: nó 22, estalagem para quarto).
+
+Achado: o painel NVL do template (`gui/nvl.png`) é quase opaco e escondia o cenário; trocado por um
+painel translúcido (`#000000a0`). Testado com uma imagem clara e movimentada (de teste, não do jogo):
+imagem visível e texto legível. As opções do menu (cinza) ficam um pouco apagadas sobre fundos muito
+claros; ajustar a cor do botão se incomodar quando houver arte final.
+
+## 7. Erro no build do Windows: `No module named 'gui7'`
+O primeiro build Windows falhou ao abrir. Causa: o projeto de empacotamento foi montado a partir do
+template `gui/game` do SDK, que inclui `game/guisupport.rpy`; esse arquivo importa `gui7`, que só existe
+no SDK. Meus testes rodavam o jogo de dentro do SDK (onde o módulo existe) e não pegaram o problema.
+Reproduzido extraindo o build Linux antigo e executando-o (mesmo erro), corrigido e verificado do
+mesmo jeito: o jogo empacotado inicia sem `traceback.txt`. Projeto de empacotamento novo: gerado com
+`renpy.sh launcher generate_gui <pasta> --start` (sem o `guisupport.rpy`), com as imagens de botão,
+barra, scrollbar e slider que esse comando não gera copiadas do template em execução, mais os nossos
+arquivos. O pacote Windows novo não contém `guisupport` nem `gui7`.
+
+## 8. APK para Android
+Gerado em 2026-11-07 com o Ren'Py 8.5.3 + RAPT (`renpy.sh launcher android_build <projeto> --destination <pasta>`),
+JDK 21, Android SDK instalado por `rapt/android.py installsdk` (licença do Android SDK aceita pelo autor).
+- Arquivo: `com.aventurasolo.vn-1.0-<versionCode>-release.apk`, **51,3 MB**; pacote `com.aventurasolo.vn`
+  (ID provisório: trocar antes de publicar), versão 1.0, paisagem, `targetSdk` 36, arquiteturas
+  `arm64-v8a`, `armeabi-v7a` e `x86_64`.
+- Assinatura v1 e v2 verificadas com `apksigner`. Assinado com uma **chave de teste** (senha `android`,
+  `keytool`), gerada só para este build: serve para instalar e testar; **não serve para publicar**.
+  Para publicar (Google Play), criar a própria chave no launcher (Android > Gerar Chaves) e guardá-la:
+  quem perde a chave não consegue atualizar o app.
+- **Não foi executado em um aparelho nem em emulador**: só foram verificados o pacote e a assinatura.
+- Percalço: o Maven Central respondeu `429 Too Many Requests` a vários downloads do Gradle. Contornado com
+  um script de inicialização do Gradle que aponta para o espelho `repo1.maven.org` e com novas
+  tentativas (o Gradle guarda em cache o que já baixou). Configuração do app (`android.json`) criada pela
+  classe `Configuration` do RAPT, pois o comando de linha de comando não pergunta.
+- Permissões declaradas pelo Ren'Py: vibração, wake lock, leitura/escrita de armazenamento e serviço em
+  primeiro plano; o jogo em si não usa nenhuma.
+
+## 9. Texto em caixa embaixo (ADV), no lugar do NVL
+O autor pediu a disposição de uma visual novel de referência: caixa de texto larga na parte de baixo, cenário
+visível por cima. O modo NVL (seção 5) foi substituído pelo **ADV**:
+- `game/characters.rpy`: `narrador = Character(None)`, caixa de 1120 px de largura e 190 px de altura, marrom
+  translúcido (`#1a120ccc`), `yalign 0.92`; texto de 24 px com contorno leve; opções do menu e menu rápido
+  claros com destaque dourado. Sem restos de NVL (um teste garante).
+- O emissor passou a gerar uma linha `narrador` por parágrafo, sem `nvl clear`; `tools/split-lines.js` divide as
+  linhas longas por frase (depois por vírgula, depois por palavra) em trechos de até 230 caracteres. Conferido que o
+  **texto é idêntico** nos 32 nós (só muda a divisão) e que menus, saltos, cenários e a flag não mudaram:
+  112 para 166 linhas de fala, a maior com 230 caracteres.
+- Verificado no Ren'Py 8.5.3: lint limpo, 3 playthroughs passando (mais cliques por nó; as esperas ganharam limite
+  explícito de 60 s) e capturas de tela com a estrada de verdade atrás da caixa.
+- Quando as escolhas aparecem, a última fala some (comportamento padrão do ADV) e as opções ficam no centro, em barras
+  escuras. Se o autor quiser a fala visível junto das escolhas, é um ajuste à parte.
+
+## 10. Tela inicial
+`game/tela_inicial.rpy` substitui o `main_menu` do template: ilustração de abertura (`bg_titulo`) em tela cheia, degradê
+escuro no lado do menu (`titulo_degrade`), título e subtítulo à esquerda e menu vertical em português (Iniciar,
+Carregar, Opções, Sobre e Sair, este só no computador). O título fica em duas linhas no topo do arquivo
+(`titulo_jogo`, `subtitulo_jogo`): é o único lugar a editar para trocá-lo. Decisão do autor: **só a tela inicial em
+português**; o resto da interface (menu rápido, Preferências, Salvar, Carregar, Sobre) continua em inglês por enquanto.
+Verificado no Ren'Py 8.5.3: lint sem erros (a tela do template é substituída sem conflito) e captura da tela.
+O lint lista avisos "already defined" para valores de `gui.*` que `characters.rpy` sobrepõe de propósito.
+
+## 11. Música (estrutura pronta, faixas pendentes)
+Escopo escolhido pelo autor: só música, 10 faixas que ele já possui. Estrutura: `game/musica.rpy` (`tocar_musica`, silêncio sem arquivo,
+mesma faixa não reinicia, fade de 1,5 s, música da tela inicial) e `tools/add-music.js` (insere as chamadas depois dos `scene`).
+Verificado no Ren'Py 8.5.3 com tons sintéticos de teste (não incluídos no repositório): a música da tela inicial toca, a de viagem
+começa ao iniciar, troca no nó do pântano, o nó sem arquivo fica em silêncio e a de derrota toca nas mortes; lint e playthroughs passam.
+Pendente: receber os arquivos e registrar fonte e licença em `assets.md`.
+
+## 12. Lição: "Continuar" ambíguo e teste
+O botão "Continuar" da tela inicial (que abre a tela de carregar) coincidia com o rótulo "Continuar" de escolhas dos nós; como o menu
+principal continua desenhado por trás nos testes, `click "Continuar"` acertava o botão errado e o playthrough travava. Renomeado
+para **"Carregar"** (descreve melhor o que faz), e isso resolveu. Nota: tentei também um `before testsuite: run Start()` no
+playthrough, mas ele não faz efeito (o menu continua por trás) e foi removido; o `Start()` só funciona dentro de um caso de
+teste, uma vez por execução. Não tinha rodado os playthroughs desde a tela inicial; passei a rodar a cada mudança.
+
+## 13. Primeira música e créditos
+`game/audio/mus_titulo.mp3` = "Dedication Day", de **Tabletop Audio** (https://tabletopaudio.com/; autoria e fonte vêm das etiquetas ID3 do
+arquivo), enviada pelo autor: 10 minutos, 13,75 MB, 192 kbps, sem corrupção (`ffmpeg` decodifica sem erros). Toca na tela inicial e some
+com fade ao iniciar o jogo (ainda não há música de viagem). Os dois finais (nós 30 e 31) mostram, depois dos créditos da história, a linha
+"Música: Dedication Day, Homecoming e Swamp Planet, de Tabletop Audio - https://tabletopaudio.com/". **Licença e uso comercial a confirmar** com o Tabletop Audio.
+O arquivo é grande: se pesar no APK, dá para converter para `.ogg` (cerca de 40% menor).
+
+## 14. Segunda música: começo da história
+`game/audio/mus_inicio.mp3` = "Homecoming", também de Tabletop Audio (10 min, 13,77 MB, 192 kbps, íntegra). Nova faixa `mus_inicio`,
+só no nó 0 (a volta para casa e o encontro com o viajante); a música de viagem (`mus_viagem`) continua reservada para os trechos seguintes.
+Interpretação do autor ("começo da história") a confirmar: se for para ser a música de viagem em geral, é só renomear o arquivo para
+`mus_viagem.mp3`. Verificado no Ren'Py: a música do menu toca, `mus_inicio` entra ao iniciar e some com fade no nó seguinte (sem música ainda).
+As duas faixas somam 27,5 MB; se pesar no APK, converter para `.ogg`.
+
+## 15. Terceira música: pântano
+`game/audio/mus_pantano.mp3` = "Swamp Planet", também de Tabletop Audio (10 min, 13,75 MB, 192 kbps, íntegra), nos nós do pântano (1, 2, 3, 5 e 6).
+Crédito dos finais atualizado para as três faixas. Verificado no Ren'Py: `mus_inicio` no nó 0 e `mus_pantano` ao escolher o pântano; lint e
+playthroughs passam. Três faixas de 10 minutos somam 41 MB; para aliviar o APK, converter para `.ogg`. Licença e uso comercial a confirmar.
+
+## 16. Personagens sobre o cenário e música de derrota
+- Duas ilustrações enviadas pelo autor (fundo branco) viraram PNG transparente: `char_heroi_caminhando.png` (herói andando) e
+  `char_scrags.png` (herói contra 2 scrags). O fundo é removido só onde o branco toca a borda da imagem (o branco dentro do personagem, como a capa,
+  é preservado) e, nos scrags, as manchas brancas do chão foram limpas à parte; ficou uma sombra cinza suave sob os pés. Altura final de 480 e 400 px.
+- Posições em `game/personagens.rpy`, com o pé um pouco acima da caixa de texto.
+- Herói: aparece no início do nó 0 e some antes de "Quantidade pequena demais para fazer frente a um guerreiro de Hedryl." (onde a história passa
+  a enfrentar os bandidos; interpretação do autor a confirmar). Scrags: aparecem na fala que os apresenta (nó 2) e, nos nós 5 e 6, no início até
+  "Você continua seguindo..." (o herói vence ou escapa). Como cada `scene` limpa a tela, o personagem é mostrado de novo em cada nó.
+- `mus_derrota.mp3` = "No Hope", de **Cleyton R. Xavier** (13 s, outro autor, não Tabletop Audio), toca uma vez só (`FAIXAS_SEM_LOOP`), nas 5 mortes.
+  Crédito acrescentado nos finais. Verificado no Ren'Py: toca ao morrer e para sozinha; capturas confirmam as entradas e saídas dos personagens.
+
+## 17. Recorte da imagem de luta refeito e música da vitória
+- **Lição:** a primeira limpeza do fundo branco da imagem do herói contra os scrags apagou o **brilho da espada** (um rastro cremoso que se dissolve no
+  branco do fundo) e deixou manchas brancas no chão. Refeito em camadas: (1) o branco ligado à borda é fundo, com um limite mais tolerante só na faixa do
+  chão; (2) ilhas brancas grandes entre as pernas dos scrags, fora do corpo do herói (preserva a túnica e a capa); (3) a borda branca (franja) é recolorida
+  com a cor do interior mais próximo; (4) **o brilho da espada é tratado à parte**: dentro da região do rastro, quanto mais amarelo/claro, mais opaco, e o núcleo
+  branco da lâmina é preservado. Conferido sobre fundo magenta (revela qualquer branco) e sobre o pântano do jogo. Ficou uma sombra cinza discreta sob os pés.
+- `game/audio/mus_final_vitoria.mp3` = "Village Festival", Tabletop Audio (10 min, 13,75 MB, 192 kbps, íntegra), no final do nó 31 (o herói derrota o dragão e é
+  aclamado em Mornard). Crédito dos finais atualizado para as 4 faixas de Tabletop Audio + "No Hope" (Cleyton R. Xavier). Verificado no Ren'Py: toca no nó 31.
+- O nó 30 (final trágico) continua sem música própria (`mus_final_tragico`).
+
+## 18. Vãos brancos sob os braços (imagem da luta)
+Sobravam bolsões de branco puro cercados pelo desenho (sob o braço de cada scrag, entre o braço e o corpo do scrag da esquerda e sob o braço do herói
+que segura o porrete), que o recorte pela borda não alcança. Remoção pós-processada direto no PNG: componentes de branco opaco com área >= 100 px e
+brancura média >= 250, ou >= 40 px e >= 249 com saturação máxima <= 10 (5 componentes). Brilhos da armadura e o rastro da espada ficam de fora
+(são menores, ou mais amarelados). A imagem do herói caminhando não tinha vãos brancos, só reflexos da armadura. Verificado sobre magenta e no jogo.
