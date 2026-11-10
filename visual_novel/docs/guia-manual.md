@@ -29,7 +29,7 @@ Para usar no Ren'Py, copie o conteúdo de `visual_novel/game/` para a pasta **`g
 | `mus_dragao` | templo e dragão | não |
 | `mus_derrota` | as mortes que levam a "Recomeçar" | sim (No Hope, vinheta de 13 s, toca uma vez) |
 | `mus_final_tragico` | final do nó 30 | não |
-| `mus_final_vitoria` | final do nó 31 | não |
+| `mus_final_vitoria` | final do nó 31 | sim (Village Festival) |
 
 A lista completa, com os nós de cada faixa, está em `docs/lista-de-musicas.md`.
 
@@ -41,7 +41,7 @@ O volume da música é ajustado pelo jogador na tela de **Preferências**.
 Os créditos aparecem no final do jogo. Abra `game/script/cap03.rpy` num editor de texto (Bloco de Notas serve), procure
 por `Música:` (aparece duas vezes, nos nós 30 e 31) e edite as duas linhas, por exemplo:
 
-    narrador "Música: Dedication Day, Homecoming e Swamp Planet, de Tabletop Audio - https://tabletopaudio.com/"
+    narrador "Música: Dedication Day, Homecoming, Swamp Planet e Village Festival, de Tabletop Audio - https://tabletopaudio.com/"
 
 Para acrescentar outra música, adicione outra linha `narrador "..."` logo abaixo, nas duas. Evite aspas dentro do texto e os
 caracteres `[`, `{` e `%`, que o Ren'Py trata de forma especial.

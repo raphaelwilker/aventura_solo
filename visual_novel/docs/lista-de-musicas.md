@@ -16,6 +16,6 @@ Sugestão: faixas de 2 a 3 minutos que repetem sem corte perceptível, em `.ogg`
 | `mus_dragao` | Templo e o dragão vermelho: o confronto final | 28, 29, 30 | pendente |
 | `mus_derrota` | Fim de jogo: as mortes que levam a "Recomeçar" | 4, 12, 19, 20, 21 | **pronto**: `mus_derrota.mp3` (No Hope, Cleyton R. Xavier; vinheta de 13 s, toca uma vez só) |
 | `mus_final_tragico` | Final trágico (nó 30): o herói morre, o dragão tomba | 30 (a partir de "final_ceu") | pendente |
-| `mus_final_vitoria` | Final vitorioso (nó 31): o herói aclamado | 31 | pendente |
+| `mus_final_vitoria` | Final vitorioso (nó 31): o herói aclamado | 31 | **pronto**: `mus_final_vitoria.mp3` (Village Festival, Tabletop Audio) |
 
 Ao receber cada arquivo, registrar em `assets.md` a fonte, a licença e se exige crédito. As músicas de Tabletop Audio estão creditadas nos finais (nós 30 e 31); ao usar outras, acrescentar o crédito na mesma tela.

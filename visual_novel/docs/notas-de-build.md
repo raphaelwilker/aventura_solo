@@ -157,3 +157,13 @@ playthroughs passam. Três faixas de 10 minutos somam 41 MB; para aliviar o APK,
   "Você continua seguindo..." (o herói vence ou escapa). Como cada `scene` limpa a tela, o personagem é mostrado de novo em cada nó.
 - `mus_derrota.mp3` = "No Hope", de **Cleyton R. Xavier** (13 s, outro autor, não Tabletop Audio), toca uma vez só (`FAIXAS_SEM_LOOP`), nas 5 mortes.
   Crédito acrescentado nos finais. Verificado no Ren'Py: toca ao morrer e para sozinha; capturas confirmam as entradas e saídas dos personagens.
+
+## 17. Recorte da imagem de luta refeito e música da vitória
+- **Lição:** a primeira limpeza do fundo branco da imagem do herói contra os scrags apagou o **brilho da espada** (um rastro cremoso que se dissolve no
+  branco do fundo) e deixou manchas brancas no chão. Refeito em camadas: (1) o branco ligado à borda é fundo, com um limite mais tolerante só na faixa do
+  chão; (2) ilhas brancas grandes entre as pernas dos scrags, fora do corpo do herói (preserva a túnica e a capa); (3) a borda branca (franja) é recolorida
+  com a cor do interior mais próximo; (4) **o brilho da espada é tratado à parte**: dentro da região do rastro, quanto mais amarelo/claro, mais opaco, e o núcleo
+  branco da lâmina é preservado. Conferido sobre fundo magenta (revela qualquer branco) e sobre o pântano do jogo. Ficou uma sombra cinza discreta sob os pés.
+- `game/audio/mus_final_vitoria.mp3` = "Village Festival", Tabletop Audio (10 min, 13,75 MB, 192 kbps, íntegra), no final do nó 31 (o herói derrota o dragão e é
+  aclamado em Mornard). Crédito dos finais atualizado para as 4 faixas de Tabletop Audio + "No Hope" (Cleyton R. Xavier). Verificado no Ren'Py: toca no nó 31.
+- O nó 30 (final trágico) continua sem música própria (`mus_final_tragico`).
